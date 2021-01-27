@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>BizLand Bootstrap Template - Index</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
 
@@ -56,15 +55,10 @@
             <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
                 <div class="container d-flex">
                 <div class="contact-info me-auto">
-                    <i class="icofont-envelope"></i> <a href="mailto:stevegagz9@gmail.com">stevegagz9@gmail.com</a>
-                    <i class="icofont-phone"></i> +1 609-970-3067
+                    <i class="icofont-envelope"></i> <a href="mailto:stevegagz9@gmail.com">info@invizz.io</a>
                 </div>
                 <div class="social-links">
-                    <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                    <a href="#" class="skype"><i class="icofont-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+                    <a href="https://twitter.com/___invizz" class="twitter" style="margin-top:3px;"><i class="icofont-twitter"></i></a>
                 </div>
                 </div>
             </div>
@@ -83,14 +77,14 @@
 
                 <nav class="nav-menu d-none d-lg-block">
                     <ul>
-                        <li class="active"><a href="/" style="margin-top:10px;">Home</a></li>
+                        <li class="active"><a href="/" style="padding-bottom: 24px;padding-top: 24px;">Home</a></li>
                         
                         <!-- <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access">Login</a></li> -->
                         @guest
                             <!-- <li>
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li> -->
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access"  style="margin-top:10px;">Login</a></li>
+                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access" style="padding-bottom: 24px;padding-top: 24px;">Login</a></li>
                             <!-- @if (Route::has('register'))
                                 <li>
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

@@ -219,7 +219,7 @@ h6 {
 
 #header.header-scrolled {
     top: 0;
-    padding: 15px;
+    padding: 0px;
 }
 
 #header .logo {
@@ -498,13 +498,12 @@ h6 {
     width: 100%;
     height: 75vh;
     background: url("../img/home-bg.jpg") top left;
-    background-size: 100% 110%;
     position: relative;
 }
 
 #hero:before {
     content: "";
-    /* background: rgba(255, 255, 255, 0.6); */
+    background: rgba(255, 255, 255, 0.6);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -528,9 +527,9 @@ h6 {
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
-    color: #ffffff;
+    color: #000;
     font-family: "Poppins", sans-serif;
-    text-shadow: 1px 1px 1px #01727a;
+    /* text-shadow: 1px 1px 1px #01727a; */
 }
 
 #hero h1 span {
@@ -618,7 +617,7 @@ h6 {
 #hero .polaroid {
     position: absolute;
     right: 0;
-    top: -50px;
+    top: 70px;
     width: 300px;
     margin-top: 20px;
     border-radius: 10px;
@@ -633,8 +632,8 @@ h6 {
 }
 
 #hero .container {
-    padding: 10px;
-    transform: translate(0%, 30%);
+    /* padding: 10px; */
+    /* transform: translate(0%, 30%); */
 }
 
 #hero .form-group {
