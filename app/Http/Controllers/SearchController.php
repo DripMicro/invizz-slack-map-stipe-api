@@ -57,9 +57,9 @@ class SearchController extends Controller
         else{
             $centerOflocation = "39.774769,-101.305086";
         }
-
+        $map_artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
         $pages = 'map';
-        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info'));
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists'));
     }
 
     public function FilterByType(Request $request)
@@ -102,9 +102,22 @@ class SearchController extends Controller
         }else{
             $centerOflocation = "39.774769,-101.305086";
         }
-
+        $map_artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
         $pages = 'map';
-        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info'));
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists'));
+    }
+
+    public function AllView(Request $request){
+        $artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
+        $pages = 'map';
+        $artist_type = DB::select('SELECT * FROM tbl_artist_type');
+        $zipcode = "";
+        $ar_type = '1';
+        $centerOflocation = "39.774769,-101.305086";
+        $login_info = $request->login_info;
+
+        $map_artists = $artists;
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists'));
     }
     /**
      * Show the form for creating a new resource.

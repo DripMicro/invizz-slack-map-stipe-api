@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'WelcomeController@index');
 Route::post('/search', 'SearchController@SearchByLocation');
+Route::post('/all_view', 'SearchController@AllView');
 Route::post('/filterbytype', 'SearchController@FilterByType');
 Route::post('/profiledialog', 'SearchController@profileDialog');
 

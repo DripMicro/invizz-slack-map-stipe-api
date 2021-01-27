@@ -141,7 +141,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="modal-profile-bottom-info">
-                    <div class="modal-profile-bottom-detail" style="margin-left:0px;display:flex;"><span class="iconify" data-icon="mdi:facebook" data-inline="false" style="font-size:20px;"></span><div style="margin-top: 1px;"  id="artist_fb">fernanda9812</div></div>
+                    <div class="modal-profile-bottom-detail" style="margin-left:20px;display:flex;"><span class="iconify" data-icon="mdi:facebook" data-inline="false" style="font-size:20px;"></span><div style="margin-top: 1px;"  id="artist_fb">fernanda9812</div></div>
                     <div class="modal-profile-bottom-detail" style="margin-left:20px;display:flex;"><span class="iconify" data-icon="mdi:instagram" data-inline="false" style="font-size:20px;"></span><div style="margin-top: 1px;" id="artist_in">fernanda</div></div>
                     <div class="modal-profile-bottom-detail" style="margin-left:20px;display:flex;"><span class="iconify" data-icon="mdi:twitter" data-inline="false" style="font-size:20px;"></span><div style="margin-top: 1px;" id="artist_rw">fernanda45</div></div>
                     <div class="modal-profile-bottom-detail" style="margin-left:20px;display:flex;"><span class="iconify" data-icon="mdi:linkedin" data-inline="false" style="font-size:20px;"></span></span><div style="margin-top: 1px;" id="artist_lin">fernandalin</div></div>
@@ -211,81 +211,85 @@
   <div class="artists-list">
     <div class="artists-navbar">
       <a href="/"><img src="assets/img/logo.png" class="logo"/></a>
+ 
+      <div style="display:flex;">
+        <form method="post" action="/search" id="form">
+          @csrf
+          <div class="form-group" id="search" style="display:flex;margin: 0px 8px 0 30px;">
+            <input type="text" class="form-control" name="search_address" id="search_address" value="{{ $zipcode }}" placeholder="Enter city or ZIP code..." style="border-right: 0px;border-radius: 0.25rem 0rem 0 0.25rem"/>
+            <input type="hidden" name="login_info" value="{{$login_info}}"/>
+            <button type="submit" form="form" value="Submit" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;"><span class="iconify" data-icon="mdi:account-search" data-inline="false"></span></button>
+          </div>
+        </form>
 
-      <form method="post" action="/search" id="form">
-        @csrf
-        <div class="form-group" id="search" style="display:flex;margin: 0px 30px;">
-          <input type="text" class="form-control" name="search_address" id="search_address" value="{{ $zipcode }}" placeholder="Enter city or ZIP code..." style="border-right: 0px;border-radius: 0.25rem 0rem 0 0.25rem"/>
+        <form method="post" action="/all_view" id="all_view">
+          @csrf
           <input type="hidden" name="login_info" value="{{$login_info}}"/>
-          <button type="submit" form="form" value="Submit" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;"><span class="iconify" data-icon="mdi:account-search" data-inline="false"></span></button>
-        </div>
-      </form>
+          <button type="submit" form="all_view" value="Submit" class="search_all">
+            <span class="iconify" data-icon="mdi:search-web" data-inline="false"></span>
+          </button>
+        </form>
+      </div>
+      
 
-      <i class="icofont-navigation-menu" style="font-size:30px;margin-top: 4px;"></i>
+      <!-- <span class="iconify search_all" data-icon="mdi:refresh-circle" data-inline="false"></span> -->
+      <!-- <span class="iconify" data-icon="mdi:view-comfy" data-inline="false" style="font-size:30px;margin-top: 4px;"></span> -->
+      <!-- <i class="icofont-navigation-menu" style="font-size:30px;margin-top: 4px;"></i> -->
       <!-- <span class="iconify" data-icon="mdi:view-sequential" data-inline="false" style="font-size:30px"></span>  -->
     </div>
     <div class="list-content">
 
-    <div class="container">
-      <form method="post" action="/filterbytype" id="filterbytype">
-        @csrf
-        <div class="row">
-          <div class="col-md-12">
-            <input type="hidden" name="login_info" value="{{$login_info}}"/>
-            <input type="hidden" value="" id="serchbyzipcode" name="serchbyzipcode"/>
-            Filter by Artist type:
-            <select class="form-control" id="artist_type_for_search" name="artist_type_for_search">
-              @foreach ($artist_type as $type)
-                @if($type->status == 'approved')
-                  @if($type->id == '1') <option value="{{ $type->id }}" <?php echo ($type->id==$ar_type ? 'selected' : '');?>>Select your artist type...(All)</option>
-                  @else<option value="{{ $type->id }}" <?php echo ($type->id==$ar_type ? 'selected' : '');?>>{{ $type->artist_type }}</option>
+      <div class="container">
+        <form method="post" action="/filterbytype" id="filterbytype">
+          @csrf
+          <div class="row">
+            <div class="col-md-12">
+              <input type="hidden" name="login_info" value="{{$login_info}}"/>
+              <input type="hidden" value="" id="serchbyzipcode" name="serchbyzipcode"/>
+              Filter by Artist type:
+              <select class="form-control" id="artist_type_for_search" name="artist_type_for_search">
+                @foreach ($artist_type as $type)
+                  @if($type->status == 'approved')
+                    @if($type->id == '1') <option value="{{ $type->id }}" <?php echo ($type->id==$ar_type ? 'selected' : '');?>>Select your artist type...</option>
+                    @else<option value="{{ $type->id }}" <?php echo ($type->id==$ar_type ? 'selected' : '');?>>{{ $type->artist_type }}</option>
+                    @endif
                   @endif
-                @endif
-              @endforeach
-            </select>
+                @endforeach
+              </select>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-      
+        </form>
+      </div>
+        
 
-      <div class="artists-list-header">Search Results</div>
-      <hr/>
-      @if(count($artists)>0)
-        @foreach($artists as $artist)
-          <div class="profile-list">
-            <div class="profile-card">
-              <div class="photo">
-                <img src="{{ $artist->avatar_src}}" id="avatar_{{ $artist->user_id }}" class="profile-photo"/>
-              </div>
-              <div class="profile-content">
-                
-                <div class="artists-name">{{ $artist->first_name }} {{ $artist->last_name }}</div>
-                <div class="artists-location">
-                  <span class="iconify" data-icon="mdi:map-marker" data-inline="false" style="font-size:20px;"></span>
-                  {{ $artist->address }}
-                </div>
-                <div class="artists-type">
+        <div class="artists-list-header">Search Results</div>
+        <hr/>
+        <!-- IMAGE LIST  -->
+        @if(count($artists)>0)
+          @foreach($artists as $artist)
+          <div class="m-list-object" id="profiledetail_{{ $artist->user_id }}">
+            <img src="{{ $artist->avatar_src}}" class="m-avatar" id="avatar_{{ $artist->user_id }}"/>
+            <div class="m-person-content">
+              <div class="m-name">{{ $artist->first_name }} {{ $artist->last_name }}</div>
+              <div class="m-type"><span class="iconify" data-icon="ic:outline-favorite" data-inline="false" style="font-size:26px;margin-bottom:3px;color:#B00020"></span>
                   @if($artist->a_type)
                     {{ $artist->a_type }}
                   @else
                     Other
                   @endif
-                </div>
-                <div class="artists-status">
-                  <span class="iconify" data-icon="mdi:account-multiple" data-inline="false" style="font-size:20px;margin-top:2px;"></span>
-                  Status: {{ $artist->collab_status }}
-                </div>
-                <div class="profile-more" id="profiledetail_{{ $artist->user_id }}" data-src="assets/img/testimonials/testimonials-1.jpg"><span class="iconify" data-icon="mdi:account-details" data-inline="false" style="font-size:30px;"></span></div>
               </div>
+              <div class="m-location"><span class="iconify" data-icon="ic:baseline-location-on" data-inline="false" style="font-size:22px;margin-bottom:3px;"></span>{{ $artist->address }}</div>
             </div>
+            <div class="m-enter"><span class="iconify" data-icon="ic:baseline-keyboard-arrow-right" data-inline="false" style="font-size:40px;"></span></div>
           </div>
-        @endforeach
-      @else
-        <div style="text-align:center;">
-        No result,  Please type the correct address or zip code.
-        </div>
-      @endif
+          @endforeach
+        @else
+          <div style="text-align:center;">
+          No result,  Please type the correct address or zip code.
+          </div>
+        @endif
+
+        <!-- IMAGE LIST  -->
 
     </div>
     

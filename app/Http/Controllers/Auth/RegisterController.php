@@ -90,8 +90,8 @@ class RegisterController extends Controller
         //             $message->to('semendotsenko111@gmail.com', 'SemenDotsenko')
         //             ->subject('Your Website Contact Form');
         // });
-
-        $input = ['message' => 'This is a test!', 'subject' => 'INVIZZ Verification'];
+ 
+        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification'];
 
         Mail::to($data['email'])->send(new sendGrid($input));
 
@@ -270,7 +270,7 @@ class RegisterController extends Controller
 
         
         $user = User::create([
-            'card_number' => 'sss',
+            'card_number' => 'VISA ****4242',
             'membership_type' => $data['membership_type'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

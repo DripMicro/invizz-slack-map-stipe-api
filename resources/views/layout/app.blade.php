@@ -31,6 +31,7 @@
         <link href="{{ asset('assets/css/vanillatoasts.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/alerts.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/global.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/list.css') }}" rel="stylesheet">
         
         <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/vanillatoasts.js') }}"></script>

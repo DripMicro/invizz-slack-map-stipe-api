@@ -1,12 +1,13 @@
 @component('mail::message')
-# Introduction
+# INVIZZ
 
-The body of your message.
+Welcome to Shellngn.<br>
+Please confirm your email address by clicking on the button below.
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'mail::url'])
+Confirm Email
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+Sincerely,<br>
+INVIZZ Team
 @endcomponent

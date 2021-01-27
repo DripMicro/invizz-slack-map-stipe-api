@@ -49,6 +49,7 @@
 
 .list-content {
     margin-top: 70px;
+    padding: 10px;
 }
 
 .artists-navbar {
@@ -65,6 +66,18 @@
 
 .logo {
     width: 75px;
+}
+
+.search_all {
+    color: black;
+    background: #efefef;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+}
+
+.search_all:active {
+    outline: -webkit-focus-ring-color auto 5px;
 }
 
 .artists-list-header {

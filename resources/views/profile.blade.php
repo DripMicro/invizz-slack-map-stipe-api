@@ -94,20 +94,22 @@
 
                                 <br>
                                 <div class="row">
-                                    <div class="col-md-10">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="address">Address </label>
                                             <input type="text" class="form-control" id="address" name="address" value="{{ $profile->address }}" placeholder="Enter your detail address">
-                                            <span class="form-text text-muted"><small>(12 S Vega St, Alhambra, Los Angeles, CA, USA)</small></span> 
+                                            <span class="form-text text-muted"><small>(Ex. Fishtown, Philadelphia, PA, USA)</small></span> 
                                         </div>
                                     </div> 
-                                    <div class="col-md-2">
+                                    <!-- <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="address">Zip code</label>
                                             <input type="text" class="form-control" id="zipcode" name="zipcode" value="{{ $profile->zipcode }}" placeholder="zipcode">
                                         </div>
-                                    </div> 
+                                    </div>  -->
                                 </div> <!-- end row -->
+
+                                <input type="hidden" id="zipcode" name="zipcode" value="00000">
 
                                 <br>
                                 <div class="row">

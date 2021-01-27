@@ -17,7 +17,7 @@
 
     var count = 0;
 
-    <?php foreach($artists as $artist){?>
+    <?php foreach($map_artists as $artist){?>
         cities.push('<?php echo $artist->address; ?>')
         images.push('<?php echo $artist->avatar_src; ?>')
         names.push('<?php echo $artist->first_name." ".$artist->last_name; ?>')
@@ -161,10 +161,10 @@
                             $("#artist_age").html("&nbsp;Age: Unknown")
                         }
 
-                        $("#artist_fb").html("<a href='https://www.facebook.com/"+user_info['social_fb']+"' target='_blank'>"+user_info['social_fb']+"</a>")
-                        $("#artist_in").html("<a href='https://www.instagram.com/"+user_info['social_insta']+"' target='_blank'>"+user_info['social_insta']+"</a>")
+                        $("#artist_fb").html("<a href='"+user_info['social_fb']+"' target='_blank'>"+user_info['social_fb']+"</a>")
+                        $("#artist_in").html("<a href='"+user_info['social_insta']+"' target='_blank'>"+user_info['social_insta']+"</a>")
                         $("#artist_rw").html("<a href='https://twitter.com/"+user_info['social_tw']+"' target='_blank'>"+user_info['social_tw']+"</a>")
-                        $("#artist_lin").html("<a href='https://www.linkedin.com/"+user_info['social_lin']+"' target='_blank'>"+user_info['social_lin']+"</a>")
+                        $("#artist_lin").html("<a href='"+user_info['social_lin']+"' target='_blank'>"+user_info['social_lin']+"</a>")
 
                         $("#artist_mail").html(user_info['email'])
                         $("#my_bio").html(user_info['bio'])
