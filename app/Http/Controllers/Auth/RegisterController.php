@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Mail;
-use \App\Mail\sendGrid;
+use App\Mail\sendGrid;
 
 use Exception;
 use App\Payment;
