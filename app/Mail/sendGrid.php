@@ -31,7 +31,7 @@ class SendGrid extends Mailable
     {
         return $this->markdown('emails.sendGrid')
                     ->with([
-                        'message' => $this->input['message']
+                        'message' => $this->input['message'], 'url' => 'http://54.237.136.251'
                     ])
                     ->from('no-reply@invizz.io', 'INVIZZ Team')
                     ->subject($this->input['subject']);
