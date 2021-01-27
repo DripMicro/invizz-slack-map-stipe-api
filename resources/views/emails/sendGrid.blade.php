@@ -4,7 +4,7 @@
 Welcome to Shellngn.<br>
 Please confirm your email address by clicking on the button below.
 
-@component('mail::button', ['url' => 'mail::url'])
+@component('mail::button', ['url' => 'mail::message'])
 Confirm Email
 @endcomponent
 
