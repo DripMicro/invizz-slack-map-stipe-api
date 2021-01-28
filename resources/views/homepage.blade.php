@@ -230,11 +230,12 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                           @enderror
+                          <p id="email-error" role="alert" class="text-danger font-italic" style="font-size:12px;margin-left:35px;"></p>
                       </div>
+
                       <div class="row form-group">
                         <div class="col-md-12">
-                          <div id="card-element">
-
+                          <div id="card-element"></div>
                         </div>
                       </div>
                       <p id="card-error" role="alert"></p>
@@ -243,8 +244,9 @@
                           <div class="col-md-12">
                               <div class="form-check form-check-inline custom-control custom-checkbox">
                                   <input type="checkbox" name="terms_conditions" id="terms_conditions" class="custom-control-input" style="float: left;width: 30px;height: 23px;">
-                                  <span>I agree to the terms of service (TOS) and privacy policy.</span>
+                                  <span style="font-size:14px;">I agree to the terms of service (TOS) and privacy policy.</span>
                               </div>
+                              <p id="terms-error" role="alert" class="text-danger font-italic" style="font-size:12px;margin-left:35px;"></p>
                               @error('terms_conditions')
                               <div class="text-danger font-italic">{{ $message }}</div>
                               @enderror
@@ -254,15 +256,22 @@
                       <input type="hidden" id="membership_type" name="membership_type" value="monthly"/>
                       <input type="hidden" id="password" name="password" value="deliteser"/>
                       <input id="password-confirm" type="hidden" class="form-control" name="password_confirmation" value="deliteser">
-                      
+
                       <div class="text-center mt-3">
-                        <button type="submit" class="btn-join-invizz" id="btn_register" >
+                        <button type="submit" class="btn-join-invizz" id="btn_register_test" >
                           <div class="each-title">Join INVIZZ</div>
                         </button>
                       </div>
-                    </div> 
-                  </div>
                 </form>
+
+                <!-- <form method="POST" action="{{ route('email.verify') }}" id="email_form">
+                  @csrf
+                  <input type="hidden" id="verify_email" name="verify_email" value="verify email"/>
+                </form> -->
+                  
+                  
+              </div> 
+            </div>
           </div>
         </div>
       </div>
@@ -528,7 +537,7 @@
                   <div class="validate"></div>
                 </div>
                 <div class="col form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email_contact" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>

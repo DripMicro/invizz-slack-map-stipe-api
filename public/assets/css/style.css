@@ -252,6 +252,10 @@ h6 {
     #header .logo {
         font-size: 28px;
     }
+    #header.header-scrolled {
+        top: 0;
+        padding: 15px;
+    }
 }
 
 
@@ -624,7 +628,7 @@ h6 {
     padding: 10px;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     text-align: center;
-    background: #fff;
+    background: #35c5a359;
 }
 
 #hero .welcome {
@@ -673,6 +677,11 @@ button {
     color: #ffffff;
     border: 1px solid #35c5a3;
     background: #35c5a3;
+}
+
+#hero .btn-join-invizz:active {
+    background: #1b8068;
+    color: white;
 }
 
 #hero .btn-join-invizz:focus {
@@ -1051,6 +1060,10 @@ button {
 @media (max-height: 500px) {
     #hero {
         height: 120vh;
+    }
+    #header.header-scrolled {
+        top: 0;
+        padding: 10px;
     }
 }
 

@@ -125,17 +125,48 @@
             // Submit the form
             form.submit();
         }
+        
+        $("#btn_register").click(function(){
+            
 
-        $('.btn_register').on('click', function () {
-            var payButton   = $(this);
+            if($("#email").val()==""){
+                $("#email-error").html('The terms conditions must be accepted.');
+                return false;
+            }else{
+                $("#email-error").html('');
+            }
 
             if(!$('#terms_conditions').prop('checked')){
-                $('.generic-errors').html('The terms conditions must be accepted.');
+                $("#terms-error").html('The terms conditions must be accepted.');
                 return false;
+            }else{
+                $("#terms-error").html('');
             }
-    
-            console.log(form)
-        });
+
+            // var email = $("#email").val()
+
+            // $("#verify_email").val(email)
+
+            // console.log("this is my value:", $("#verify_email").val())
+            // $("#email_form").submit()
+
+            // $.ajax({
+            //         url: "{{ route('email.verify') }}",
+            //         type: 'POST',
+            //         data: { '_token': '{{ csrf_token() }}', 'email': email },
+            //         dataType: 'json',
+            //         success: function(user_info) {
+            //             console.log(user_info)
+            //             $("#verify_email").val("asdfadfadfads") 
+            //             location.href="{{ route('email.toverify') }}"
+            //         },
+            //         error: function() {
+            //             console.log('error');
+            //         }
+            //     })
+
+            
+        })
 
         console.log($("#registered").val())
 

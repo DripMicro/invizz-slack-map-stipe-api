@@ -134,19 +134,31 @@
             <td bgcolor="#35c5a3" align="center" style="padding: 0px 10px 0px 10px;">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
-                        <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                            <h1 style="font-size: 30px; font-weight: 400; margin: 2;">Welcome to INVIZZ!{{$url}}</h1> <img src="http://54.237.136.251/assets/img/logo.png" width="125" height="120" style="display: block; border: 0px;" />
+                        <td bgcolor="#ffffff" align="left" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                            <img src="http://54.237.136.251/assets/img/logo.png" width="125" height="120" style="display: block; border: 0px;" /> 
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr>
+            <td bgcolor="#35c5a3" align="center" style="padding: 0px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                            <h1 style="font-size: 30px; font-weight: 400; margin: 2;text-align:center;">Welcome to INVIZZ!</h1> 
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <tr>
             <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
-                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 25px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;">Please confirm your email address by clicking on the button below.</p>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 5px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;text-align:center;">Please confirm your email address by clicking on the button below.</p>
                         </td>
                     </tr>
                     <tr>
@@ -156,7 +168,7 @@
                                     <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 25px 30px;">
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" style="border-radius: 5px;" bgcolor="#35c5a3"><a href="<?php echo 'http://54.237.136.251/           '.$url; ?>" target="_blank" style="box-sizing: border-box;font-size: 17px;font-family: Helvetica,Arial,sans-serif;color: #ffffff;text-decoration: none;padding: 9px 14px;border-radius: 2px;display: inline-block;">CONFIRM EMAIL</a></td>
+                                                <td align="center" style="border-radius: 1px;" bgcolor="#35c5a3"><a href="<?php echo $url; ?>" target="_blank" style="box-sizing: border-box;font-size: 12px;font-family: Helvetica,Arial,sans-serif;color: #ffffff;text-decoration: none;padding: 9px 14px;border-radius: 2px;display: inline-block;">CONFIRM EMAIL</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -166,17 +178,12 @@
                     </tr> <!-- COPY -->
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;">If that doesn't work, copy and paste the following link in your browser:</p>
+                            <p style="margin: 0;text-align:center;">If that doesn't work, copy and paste the following link in your browser:</p>
                         </td>
                     </tr> <!-- COPY -->
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;"><a href="#" target="_blank" style="color: #FFA73B;">http://54.237.136.251/</a></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;">If you have any questions, just reply to this email—we're always happy to help out.</p>
+                            <p style="margin: 0;text-align:center;"><a href="#" target="_blank" style="color: #FFA73B;">{{$url}}</a></p>
                         </td>
                     </tr>
                     <tr>

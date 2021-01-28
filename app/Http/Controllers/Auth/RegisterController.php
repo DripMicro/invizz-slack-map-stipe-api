@@ -81,21 +81,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        // Mail::send('email', [
-        //     'name' => 'Veronika',
-        //     'email' => 'semendotsenko111@gmail.com',
-        //     'comment' => 'This is my test' ],
-        //     function ($message) {
-        //             $message->from('no-reply@invizz.io');
-        //             $message->to('semendotsenko111@gmail.com', 'SemenDotsenko')
-        //             ->subject('Your Website Contact Form');
-        // });
- 
-        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification'];
-
-        Mail::to($data['email'])->send(new sendGrid($input));
-
-
         /** I have hard coded amount. You may fetch the amount based on customers order or anything */
 
         $m_amount     = 6 * 100;
@@ -144,8 +129,8 @@ class RegisterController extends Controller
                 //   'price' => $price->id,
                 // ]],
             ]);
-//price_1IDhMXH3N3r89kEsqqX1boQe
 
+            //price_1IDhMXH3N3r89kEsqqX1boQe
             // $paymentDetails = $price->jsonSerialize();
 
         }else if($membership == 'annual'){
@@ -180,7 +165,7 @@ class RegisterController extends Controller
                 // ]],
             ]);
 
-//price_1ICshRH3N3r89kEscyrSbd2U
+            //price_1ICshRH3N3r89kEscyrSbd2U
             // $paymentDetails = $price->jsonSerialize();
         }
 
@@ -284,6 +269,15 @@ class RegisterController extends Controller
         $profile = DB::table('tbl_profile')->insert(
             array('user_id' => $user_id)
         );
-        return $user;
+
+        $verify_link = "http://54.237.136.251/register";
+
+        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification', 'url' => $verify_link];
+
+        Mail::to($data['email'])->send(new sendGrid($input));
+        // return view('emails.emailVerify', compact('email'));
+        return view('emails.emailVerify')->with(['email'=>$data['email']]);
+
+        // return $user;
     }
 }

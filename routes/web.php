@@ -29,3 +29,9 @@ Route::post('/image-upload/{id}', 'ProfileController@imageUploadPost')->name('im
 Route::post('/profile-add-type', 'ProfileController@addArtistType')->name('profile.addtype');
 Route::get('/profile/{id}', 'ProfileController@edit');
 Route::resource('profile','ProfileController');
+
+/// Email Verification
+
+Route::get('/not-actived', 'EmailVerifyController@ToVerify')->name('email.toverify');
+
+Route::post('/not-actived', 'EmailVerifyController@EmailVerify')->name('email.verify');
