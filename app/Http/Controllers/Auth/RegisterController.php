@@ -263,8 +263,8 @@ class RegisterController extends Controller
 
         $verify_link = "http://54.237.136.251/register";
 
-        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification'];
-
+        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification', 'url' => $verify_link];
+    
         Mail::to($data['email'])->send(new sendGrid($input));
 
         
