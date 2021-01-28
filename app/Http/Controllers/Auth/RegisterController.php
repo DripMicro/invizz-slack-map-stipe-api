@@ -260,6 +260,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $verify_link = "http://54.237.136.251/register";
+
+        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification'];
+
+        Mail::to($data['email'])->send(new sendGrid($input));
+
+        
         // $data = DB::select('select id from users where email = ?',[$data['email']]);
         $data = DB::table('users')
         ->where('email', $data['email'])
@@ -270,14 +278,10 @@ class RegisterController extends Controller
             array('user_id' => $user_id)
         );
 
-        $verify_link = "http://54.237.136.251/register";
-
-        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification', 'url' => $verify_link];
-
-        Mail::to($data['email'])->send(new sendGrid($input));
+        
         // return view('emails.emailVerify', compact('email'));
-        return view('emails.emailVerify')->with(['email'=>$data['email']]);
+        // return view('emails.emailVerify')->with(['email'=>$data['email']]);
 
-        // return $user;
+        return $user;
     }
 }
