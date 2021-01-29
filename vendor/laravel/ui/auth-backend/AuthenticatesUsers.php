@@ -6,6 +6,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Mail;
+use App\Mail\sendGrid;
 
 trait AuthenticatesUsers
 {
@@ -126,6 +128,13 @@ trait AuthenticatesUsers
     protected function authenticated(Request $request, $user)
     {
         //
+            $email = $user->email;
+            $auth = base64_encode($email);
+            $verify_link = "http://54.237.136.251/signin/".$auth;
+    
+            $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
+        
+            Mail::to($email)->send(new sendGrid($input));
     }
 
     /**
