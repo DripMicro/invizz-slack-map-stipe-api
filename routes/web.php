@@ -36,6 +36,4 @@ Route::get('/not-activated', 'EmailVerifyController@ToVerify')->name('email.tove
 
 Route::post('/not-activated', 'EmailVerifyController@EmailVerify')->name('email.verify');
 
-Route::get('/auth/{confirm}', function () {
-    return redirect('/{confirm}');
-});
+Route::get('/auth/{confirm}', 'WelcomeController@auth');

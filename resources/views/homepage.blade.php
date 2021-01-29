@@ -11,15 +11,15 @@
       <h1>Welcome to <span>INVIZZ</span></h1>
       <h2>Discover and collaborate with artists near you</h2>
       <div style="margin-right:15px">
-        <img src="assets/img/artists/1.jpg" class="circle-image"/>
-        <img src="assets/img/artists/2.jpg" class="circle-image"/>
-        <img src="assets/img/artists/3.jpg" class="circle-image"/>
-        <img src="assets/img/artists/4.jpg" class="circle-image"/>
-        <img src="assets/img/artists/5.jpg" class="circle-image"/>
-        <img src="assets/img/artists/6.jpg" class="circle-image"/>
-        <img src="assets/img/artists/7.jpg" class="circle-image"/>
-        <img src="assets/img/artists/8.jpg" class="circle-image"/>
-        <img src="assets/img/artists/9.jpg" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/1.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/2.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/3.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/4.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/5.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/6.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/7.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/8.jpg') }}" class="circle-image"/>
+        <img src="{{ asset('assets/img/artists/9.jpg') }}" class="circle-image"/>
       </div>
       <br>
       <!-- ----------------- -->
@@ -52,7 +52,8 @@
         </div>
 
         <div class="polaroid">
-          <img src="assets/img/login.jpg" alt="Norway" style="width:100%; height:190px; border-radius:10px">
+        
+          <img src="{{ asset('assets/img/login.jpg') }}" alt="Norway" style="width:100%; height:190px; border-radius:10px">
 
           <div class="col form-group">
             <div style="display:flex;margin-left:10px">
@@ -125,21 +126,22 @@
                     <div class="col-md-6" style="padding-right:20px;">
                       <div class="row">
                         <div class="col-md-12" style="text-align:center; ">
-                          <img src="assets/img/artists/1.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/2.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/3.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/4.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/5.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/6.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/7.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/8.jpg" class="circle-image"/>
-                          <img src="assets/img/artists/9.jpg" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/1.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/2.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/3.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/4.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/5.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/6.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/7.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/8.jpg') }}" class="circle-image"/>
+                          <img src="{{ asset('assets/img/artists/9.jpg') }}" class="circle-image"/>
                         </div>
                       </div>
                       <br>
                       <div class="row">
                         <div class="col-md-12">
-                            <img src="assets/img/register-left.jpg" class="left-demo-image"/>
+                        
+                            <img src="{{ asset('assets/img/register-left.jpg') }}" class="left-demo-image"/>
                         </div>
                       </div>
                       <br>
@@ -385,7 +387,8 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              
+                <img src="{{ asset('assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -403,7 +406,8 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              
+                <img src="{{ asset('assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -421,7 +425,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/team/team-3.jpg') }}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -439,7 +443,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/team/team-4.jpg') }}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -603,20 +607,20 @@
   @include('scripts.homepage-script')
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/counterup/counterup.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/venobox/venobox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/custome.js"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
+  <script src="{{ asset('assets/js/custome.js') }}"></script>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
  
 @endsection

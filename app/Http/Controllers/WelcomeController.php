@@ -16,12 +16,26 @@ class WelcomeController extends Controller
         //
         $pages = 'home';
         $avatar_image = "";
+        return view('homepage', compact('pages'));
+    } 
+
+    public function auth($verify)
+    {
+        //
+        $pages = 'home';
+        $avatar_image = "";
         $currentUser = \Auth::user();
         if($currentUser){
-            $confirm = $_GET['confirm'];
+            $confirm =$verify;
             echo "<script>console.log('this is my bio:','".$confirm."')</script>";
         }else{
             $confirm = "THis is empty";
+        }
+
+        if($confirm != '1'){
+            $currentUser = \Auth::user();
+            $email = $currentUser->email;
+            return view('emails.emailVerify', compact('email'));
         }
         
         return view('homepage', compact('pages', 'confirm'));

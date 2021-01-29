@@ -262,7 +262,7 @@ class RegisterController extends Controller
         ]);
 
         $auth = '1';
-        $verify_link = "http://54.237.136.251/auth?confirm=".$auth;
+        $verify_link = "http://54.237.136.251/auth/".$auth;
 
         $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
     
