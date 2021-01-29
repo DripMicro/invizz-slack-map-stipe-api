@@ -41,3 +41,5 @@ Route::get('/auth/{confirm}', 'WelcomeController@auth');
 Route::get('/signin/{confirm}', function () {
     return redirect('/');
 });
+
+Route::post('/leave-feedback', 'EmailVerifyController@EmailVerify')->name('email.feedback');

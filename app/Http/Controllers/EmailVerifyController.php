@@ -18,13 +18,13 @@ class EmailVerifyController extends Controller
     }
 
     public function EmailVerify(Request $request){
-        $email = $request->verify_email;
+        $email = $request->email_contact;
         $verify_link = "http://54.237.136.251/register";
 
-        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification', 'url' => $verify_link];
+        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
 
         Mail::to($email)->send(new sendGrid($input));
         // return view('emails.emailVerify', compact('email'));
-        return view('emails.emailVerify')->with(['email'=>$email]);
+        return view('homepage');
     }
 }
