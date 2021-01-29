@@ -93,7 +93,7 @@
                         @else
                             <li class="drop-down">  <a href="#"><img src="@if(Auth::User()->profile->avatar_src){{Auth::User()->profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" style="width:40px;height:40px;border-radius:50%;"/> </a>
                                 <ul>
-                                    <li><a class="dropdown-item" href="/profile/{{Auth::user()->id}}"><span class="iconify" data-icon="noto:gear" data-inline="false" style="font-size: 25px;margin-right: 5px;"></span>Profile Setting</a>
+                                    <li><a class="dropdown-item" href="/profile/{{Auth::user()->id}}"><span class="iconify" data-icon="noto:gear" data-inline="false" style="font-size: 25px;margin-right: 5px;"></span>{{$confirm}}</a>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

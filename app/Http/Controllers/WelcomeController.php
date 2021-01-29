@@ -16,7 +16,15 @@ class WelcomeController extends Controller
         //
         $pages = 'home';
         $avatar_image = "";
-        return view('homepage', compact('pages'));
+        $currentUser = \Auth::user();
+        if($currentUser){
+            $confirm = $_GET['confirm'];
+            echo "<script>console.log('this is my bio:','".$confirm."')</script>";
+        }else{
+            $confirm = "THis is empty";
+        }
+        
+        return view('homepage', compact('pages', 'confirm'));
     } 
 
     /**
