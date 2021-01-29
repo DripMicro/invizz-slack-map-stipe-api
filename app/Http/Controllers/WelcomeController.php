@@ -36,9 +36,9 @@ class WelcomeController extends Controller
         $avatar_image = "";
         $currentUser = \Auth::user();
         if($currentUser){
-            $confirm =$verify;
+            $confirm =base64_decode($verify);
             $email = $currentUser->email;
-            if($confirm != '1'){
+            if($confirm != $email){
                 return view('emails.emailVerify', compact('email'));
             }
         }

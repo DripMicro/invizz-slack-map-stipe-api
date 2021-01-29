@@ -261,7 +261,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $auth = '1';
+
+        $auth = base64_encode($data['email']);
         $verify_link = "http://54.237.136.251/auth/".$auth;
 
         $input = ['message' => $verify_link, 'subject' => 'Email Verification'];

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Mail;
+use App\Mail\sendGrid;
 
 class LoginController extends Controller
 {
@@ -35,6 +37,16 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $currentUser = \Auth::user();
+        $email = $currentUser->email;
+        
+        $auth = base64_encode($email);
+        $verify_link = "http://54.237.136.251/auth/".$auth;
+
+        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
+    
+        Mail::to($email)->send(new sendGrid($input));
+
         $this->middleware('guest')->except('logout');
     }
 }
