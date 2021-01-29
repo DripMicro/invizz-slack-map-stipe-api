@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
 {
@@ -14,6 +15,15 @@ class WelcomeController extends Controller
     public function index()
     {
         //
+        $currentUser = \Auth::user();
+        if($currentUser){
+            $verified = DB::table('users')->where('email', $currentUser->email)->get()->first();
+            if($verified->email_verified_at != 'verified'){
+                $email = $currentUser->email;
+                // return view('emails.emailVerify', compact('email'));
+                return redirect()->route('email.toverify');
+            }
+        }
         $pages = 'home';
         $avatar_image = "";
         return view('homepage', compact('pages'));
@@ -27,18 +37,16 @@ class WelcomeController extends Controller
         $currentUser = \Auth::user();
         if($currentUser){
             $confirm =$verify;
-            echo "<script>console.log('this is my bio:','".$confirm."')</script>";
-        }else{
-            $confirm = "THis is empty";
-        }
-
-        if($confirm != '1'){
-            $currentUser = \Auth::user();
             $email = $currentUser->email;
-            return view('emails.emailVerify', compact('email'));
+            if($confirm != '1'){
+                return view('emails.emailVerify', compact('email'));
+            }
         }
         
-        return view('homepage', compact('pages', 'confirm'));
+        $result = DB::table('users')
+                ->where('email', $email)
+                ->update(['email_verified_at' => 'verified' ]);
+        return view('homepage', compact('pages'));
     } 
 
     /**
