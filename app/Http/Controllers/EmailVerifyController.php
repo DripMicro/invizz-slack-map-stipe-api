@@ -12,7 +12,8 @@ class EmailVerifyController extends Controller
     //
 
     public function ToVerify(){
-        $email = $_GET['email'];
+        $currentUser = \Auth::user();
+        $email = $currentUser->email;
         return view('emails.emailVerify', compact('email'));
     }
 

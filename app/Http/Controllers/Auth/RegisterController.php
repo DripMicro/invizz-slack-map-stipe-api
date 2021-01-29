@@ -261,9 +261,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $verify_link = "http://54.237.136.251/register";
+        $auth = '1';
+        $verify_link = "http://54.237.136.251/auth?confirm=".$auth;
 
-        $input = ['message' => 'Nice to meet you', 'subject' => 'Email Verification', 'url' => $verify_link];
+        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
     
         Mail::to($data['email'])->send(new sendGrid($input));
 

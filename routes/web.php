@@ -35,3 +35,7 @@ Route::resource('profile','ProfileController');
 Route::get('/not-activated', 'EmailVerifyController@ToVerify')->name('email.toverify');
 
 Route::post('/not-activated', 'EmailVerifyController@EmailVerify')->name('email.verify');
+
+Route::get('/auth', function () {
+    return redirect('/');
+});
