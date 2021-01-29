@@ -267,6 +267,7 @@ class RegisterController extends Controller
     
         Mail::to($data['email'])->send(new sendGrid($input));
 
+        $verify_email = $data['email'];
         
         // $data = DB::select('select id from users where email = ?',[$data['email']]);
         $data = DB::table('users')
@@ -280,7 +281,7 @@ class RegisterController extends Controller
 
         
         // return view('emails.emailVerify', compact('email'));
-        // return view('emails.emailVerify')->with(['email'=>$data['email']]);
+        // view('emails.emailVerify')->with(['email'=>$verify_email]);
 
         return $user;
     }

@@ -168,7 +168,7 @@
                                     <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 25px 30px;">
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" style="border-radius: 1px;" bgcolor="#35c5a3"><a href="<?php echo $url; ?>" target="_blank" style="box-sizing: border-box;font-size: 12px;font-family: Helvetica,Arial,sans-serif;color: #ffffff;text-decoration: none;padding: 9px 14px;border-radius: 2px;display: inline-block;">CONFIRM EMAIL</a></td>
+                                                <td align="center" style="border-radius: 1px;" bgcolor="#35c5a3"><a href="<?php echo $message; ?>" target="_blank" style="box-sizing: border-box;font-size: 12px;font-family: Helvetica,Arial,sans-serif;color: #ffffff;text-decoration: none;padding: 9px 14px;border-radius: 2px;display: inline-block;">CONFIRM EMAIL</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -183,7 +183,7 @@
                     </tr> <!-- COPY -->
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;text-align:center;"><a href="#" target="_blank" style="color: #FFA73B;">{{$url}}</a></p>
+                            <p style="margin: 0;text-align:center;"><a href="#" target="_blank" style="color: #FFA73B;">{{$message}}</a></p>
                         </td>
                     </tr>
                     <tr>

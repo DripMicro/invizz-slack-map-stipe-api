@@ -32,6 +32,6 @@ Route::resource('profile','ProfileController');
 
 /// Email Verification
 
-Route::get('/not-actived', 'EmailVerifyController@ToVerify')->name('email.toverify');
+Route::get('/not-activated', 'EmailVerifyController@ToVerify')->name('email.toverify');
 
-Route::post('/not-actived', 'EmailVerifyController@EmailVerify')->name('email.verify');
+Route::post('/not-activated', 'EmailVerifyController@EmailVerify')->name('email.verify');
