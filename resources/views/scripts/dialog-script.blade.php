@@ -114,6 +114,25 @@
             }
         })
 
+        $("#btn_slack").click(function(){
+
+            console.log($("#artist_mail").html())
+
+            var 
+            // $.ajax({
+            //     url: '/slack',
+            //     type: 'POST',
+            //     data: { '_token': '{{ csrf_token() }}', 'image_src': image_src },
+            //     dataType: 'json',
+            //     success: function(result) {
+            //        console.log('success')
+            //     },
+            //     error: function() {
+            //         console.log('error');
+            //     }
+            // })
+        })
+        
         $("#artist_type_for_search").change(function() {
             var zipcode = $("#search_address").val()
             $("#serchbyzipcode").val(zipcode)

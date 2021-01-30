@@ -156,7 +156,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3" style="padding: 30px 20px;">
-              <div class="modal-profile-bottom-detail" style="margin-left:0px;display:flex;margin-top:30px"><span class="iconify" data-icon="mdi:email" data-inline="false" style="font-size:25px;"></span><div style="margin-top: 1px;font-size: 16px;margin-left: 2px;"  id="artist_mail"> viktor112kuzmin@yandex.com</div></div>
+              <div class="modal-profile-bottom-detail" style="margin-left:0px;display:flex;margin-top:30px"><span class="iconify" data-icon="mdi:email" data-inline="false" style="font-size:25px;"></span><div style="margin-top: 1px;font-size: 16px;margin-left: 2px;"  id="artist_mail">viktor112kuzmin@yandex.com</div></div>
               <br>
 
               <div class="artists-age">
@@ -171,8 +171,7 @@
               </div>
               <br>
 
-              <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" ><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;"></span> Send Message</button>
-              <a href="/slack" style="font-size:30px;">Slack</a>
+              <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;"></span> Send Message</button>
             </div>
 
             <div class="col-md-9" style="padding: 30px 20px;">

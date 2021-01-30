@@ -8,6 +8,6 @@ class SlackController extends Controller
 {
     //
     public function slack(){
-        \Slack::send('Hey');
+        \Slack::to('#testing')->send('Hi Testing!');
     }
 }
