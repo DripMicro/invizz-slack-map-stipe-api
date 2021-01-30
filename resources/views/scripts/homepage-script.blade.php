@@ -4,6 +4,7 @@
 <script>
     $(document).ready(function() {
 
+
         console.log("{{ env('STRIPE_PUBLISH_KEY') }}")
 
         console.log("eliteaa:", "<?php echo env('STRIPE_PUBLISH_KEY'); ?>")
@@ -227,6 +228,28 @@
                 })
             }
            
+        })
+
+        $("#send_message").click(function(){
+            var name_contact = $("#name_contact").val()
+            var email_contact = $("#email_contact").val()
+            var subject_contact = $("#subject_contact").val()
+            var message_contact = $("#message_contact").val()
+
+            console.log(name_contact,email_contact,subject_contact,message_contact)
+            $.ajax({
+                url: "{{ route('email.feedback') }}",
+                type: 'POST',
+                data: { '_token': '{{ csrf_token() }}', 'name_contact': name_contact, 'email_contact': email_contact, 'subject_contact': subject_contact, 'message_contact': message_contact },
+                dataType: 'json',
+                success: function(msg) {
+                    console.log(msg)
+                },
+                error: function() {
+                    console.log('error');
+                    tata.success('INVIZZ', "Your feedback is sent successfully")
+                }
+            })
         })
     })
 </script>

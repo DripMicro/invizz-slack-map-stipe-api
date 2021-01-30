@@ -534,8 +534,7 @@
           </div> -->
 
           <div class="col-lg-12">
-            <form action="{{ route('email.feedback') }}" method="post" role="form" class="php-email-form">
-              @csrf
+            <div class="php-email-form">
               <div class="row">
                 <div class="col form-group">
                   <input type="text" name="name_contact" class="form-control" id="name_contact" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -551,7 +550,7 @@
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message_contact" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message_contact" rows="5" id="message_contact" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
@@ -559,8 +558,8 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+              <div class="text-center"><button id="send_message" type="submit">Send Message</button></div>
+            </div>
           </div>
 
         </div>

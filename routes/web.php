@@ -42,4 +42,4 @@ Route::get('/signin/{confirm}', function () {
     return redirect('/');
 });
 
-Route::post('/leave-feedback', 'EmailVerifyController@EmailVerify')->name('email.feedback');
+Route::post('/leave-feedback', 'EmailVerifyController@LeaveFeedback')->name('email.feedback');

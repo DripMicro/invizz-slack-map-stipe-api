@@ -161,6 +161,11 @@
                             $("#artist_age").html("&nbsp;Age: Unknown")
                         }
 
+                        if(user_info['social_fb'] == null) user_info['social_fb'] = "Your FaceBook"
+                        if(user_info['social_insta'] == null) user_info['social_insta'] = "Your Instagram"
+                        if(user_info['social_tw'] == null) user_info['social_tw'] = "Your Twitter"
+                        if(user_info['social_lin'] == null) user_info['social_lin'] = "Your Linkedin"
+                        
                         $("#artist_fb").html("<a href='"+user_info['social_fb']+"' target='_blank'>"+user_info['social_fb']+"</a>")
                         $("#artist_in").html("<a href='"+user_info['social_insta']+"' target='_blank'>"+user_info['social_insta']+"</a>")
                         $("#artist_rw").html("<a href='https://twitter.com/"+user_info['social_tw']+"' target='_blank'>"+user_info['social_tw']+"</a>")

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Mail;
-use App\Mail\sendGrid;
+use App\Mail\contactEmail;
 
 class EmailVerifyController extends Controller
 {
@@ -17,13 +17,16 @@ class EmailVerifyController extends Controller
         return view('emails.emailVerify', compact('email'));
     }
 
-    public function EmailVerify(Request $request){
+    public function LeaveFeedback(Request $request){
+
         $email = $request->email_contact;
-        $verify_link = "http://54.237.136.251/register";
+        $name = $request->name_contact;
+        $subject = $request->subject_contact;
+        $message = $request->message_contact;
 
-        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
+        $input = ['message' => $message, 'email'=>$email, 'name'=>$name, 'subject'=>$subject];
 
-        Mail::to($email)->send(new sendGrid($input));
+        Mail::to('info@invizz.io')->send(new contactEmail($input));
         // return view('emails.emailVerify', compact('email'));
         return view('homepage');
     }
