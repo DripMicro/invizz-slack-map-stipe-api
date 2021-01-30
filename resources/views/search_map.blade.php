@@ -170,7 +170,9 @@
                   <div style="margin-top: 4px;"> &nbsp;Collab Status: On</div>
               </div>
               <br>
-              <button class="btn-get-started scrollto bugfix" style="border-radius:20px;"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;"></span> Send Message</button>
+
+              <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" ><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;"></span> Send Message</button>
+              <a href="/slack" style="font-size:30px;">Slack</a>
             </div>
 
             <div class="col-md-9" style="padding: 30px 20px;">

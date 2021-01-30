@@ -20,10 +20,10 @@ class ComposerStaticInit688a08ae9b39e0e9bbd64c1db802e423
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -44,6 +44,11 @@ class ComposerStaticInit688a08ae9b39e0e9bbd64c1db802e423
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'j' => 
+        array (
+            'jeremykenedy\\Slack\\Laravel\\' => 27,
+            'jeremykenedy\\Slack\\' => 19,
         ),
         'X' => 
         array (
@@ -184,6 +189,14 @@ class ComposerStaticInit688a08ae9b39e0e9bbd64c1db802e423
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'jeremykenedy\\Slack\\Laravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src',
+        ),
+        'jeremykenedy\\Slack\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeremykenedy/slack/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -510,6 +523,7 @@ class ComposerStaticInit688a08ae9b39e0e9bbd64c1db802e423
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\EmailVerifyController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmailVerifyController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
@@ -522,6 +536,7 @@ class ComposerStaticInit688a08ae9b39e0e9bbd64c1db802e423
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\contactEmail' => __DIR__ . '/../..' . '/app/Mail/contactEmail.php',
         'App\\Profile' => __DIR__ . '/../..' . '/app/Profile.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -5140,6 +5155,18 @@ class ComposerStaticInit688a08ae9b39e0e9bbd64c1db802e423
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'jeremykenedy\\Slack\\ActionConfirmation' => __DIR__ . '/..' . '/jeremykenedy/slack/src/ActionConfirmation.php',
+        'jeremykenedy\\Slack\\Attachment' => __DIR__ . '/..' . '/jeremykenedy/slack/src/Attachment.php',
+        'jeremykenedy\\Slack\\AttachmentAction' => __DIR__ . '/..' . '/jeremykenedy/slack/src/AttachmentAction.php',
+        'jeremykenedy\\Slack\\AttachmentField' => __DIR__ . '/..' . '/jeremykenedy/slack/src/AttachmentField.php',
+        'jeremykenedy\\Slack\\Client' => __DIR__ . '/..' . '/jeremykenedy/slack/src/Client.php',
+        'jeremykenedy\\Slack\\Laravel\\Facade' => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src/Facade.php',
+        'jeremykenedy\\Slack\\Laravel\\Fakes\\MessageFake' => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src/Fakes/MessageFake.php',
+        'jeremykenedy\\Slack\\Laravel\\Fakes\\SlackFake' => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src/Fakes/SlackFake.php',
+        'jeremykenedy\\Slack\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src/ServiceProvider.php',
+        'jeremykenedy\\Slack\\Laravel\\ServiceProviderLaravel4' => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src/ServiceProviderLaravel4.php',
+        'jeremykenedy\\Slack\\Laravel\\ServiceProviderLaravel5' => __DIR__ . '/..' . '/jeremykenedy/slack-laravel/src/ServiceProviderLaravel5.php',
+        'jeremykenedy\\Slack\\Message' => __DIR__ . '/..' . '/jeremykenedy/slack/src/Message.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

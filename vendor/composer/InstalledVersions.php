@@ -24,12 +24,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => 'a43edc6829d380784aac8596e435b59064811a15',
+    'reference' => 'f4fde91abb31282d17fbe6755f6f03175edb68e0',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -422,6 +422,24 @@ private static $installed = array (
         0 => 'v7.30.4',
       ),
     ),
+    'jeremykenedy/slack' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '943923fe5e5eeaefab6db760b0e1877ef1432cf9',
+    ),
+    'jeremykenedy/slack-laravel' => 
+    array (
+      'pretty_version' => 'v2.6.0',
+      'version' => '2.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '447485a9309831a8830bb4291445fed36450b053',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -440,12 +458,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => 'a43edc6829d380784aac8596e435b59064811a15',
+      'reference' => 'f4fde91abb31282d17fbe6755f6f03175edb68e0',
     ),
     'laravel/tinker' => 
     array (
