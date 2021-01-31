@@ -115,22 +115,19 @@
         })
 
         $("#btn_slack").click(function(){
-
-            console.log($("#artist_mail").html())
-
-            var 
-            // $.ajax({
-            //     url: '/slack',
-            //     type: 'POST',
-            //     data: { '_token': '{{ csrf_token() }}', 'image_src': image_src },
-            //     dataType: 'json',
-            //     success: function(result) {
-            //        console.log('success')
-            //     },
-            //     error: function() {
-            //         console.log('error');
-            //     }
-            // })
+            var email = $("#artist_mail").html()
+            $.ajax({
+                url: "{{ route('slack.sendmessage') }}",
+                type: 'GET',
+                data: { '_token': '{{ csrf_token() }}', 'email': email },
+                dataType: 'json',
+                success: function(result) {
+                   console.log('success')
+                },
+                error: function() {
+                    console.log('error');
+                }
+            })
         })
         
         $("#artist_type_for_search").change(function() {

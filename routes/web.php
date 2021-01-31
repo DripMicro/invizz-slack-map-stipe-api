@@ -44,4 +44,4 @@ Route::get('/signin/{confirm}', function () {
 
 Route::post('/leave-feedback', 'EmailVerifyController@LeaveFeedback')->name('email.feedback');
 
-Route::get('/slack', 'SlackController@slack');
+Route::get('/slack', 'SlackController@slack')->name('slack.sendmessage');
