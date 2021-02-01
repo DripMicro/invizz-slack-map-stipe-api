@@ -46,7 +46,12 @@ a {
 }
 
 a:hover {
-    color: #3b8af2;
+    color: #35c5a3;
+    text-decoration: none;
+}
+
+.modal-profile-dialog a:hover {
+    color: #fff;
     text-decoration: none;
 }
 
@@ -950,7 +955,7 @@ button {
     font-size: 14px;
     letter-spacing: 1px;
     display: inline-block;
-    padding: 16px 28px;
+    padding: 0px 16px;
     border-radius: 35px;
     transition: 0.5s;
     color: #fff;

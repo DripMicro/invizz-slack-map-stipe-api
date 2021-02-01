@@ -30,16 +30,20 @@
       @endguest
       <!-- ----------------- -->
       <div class="search-position">
-        
+         
           <div class="col form-group" id="search">
-          <form method="post" action="/search">
+          <form method="post" action="/search" id="home_search">
         @csrf
             <div style="display:flex;margin-left:10px">
               <span class="iconify text-register-icon" data-icon="mdi:account-search-outline" data-inline="false"></span>
               <input type="text" class="form-control text-register" name="search_address" id="search_address" placeholder="Enter city or ZIP code..." style="width:300px;"/>
               <div class="validate"></div>
               <input type="hidden" name="login_info" value="@guest{{'off'}}@else{{'on'}}@endguest"/>
-              <input type="submit" value="Search" class="btn-get-started scrollto bugfix"/>
+              <!-- <input type="submit" value="Search" class="btn-get-started scrollto bugfix"/> -->
+
+              <button type="submit" form="home_search" value="Submit" class="btn-get-started scrollto bugfix">
+                <span class="iconify" data-icon="jam:search" data-inline="false" style="font-size:25px;"></span>
+              </button>
             </div>
         </form>
 
