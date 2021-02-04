@@ -171,17 +171,12 @@
               </div>
               <br>
 
-              <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://star-b4p7103.slack.com/app_redirect?app=A01L837USNS" target="_blank"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;"></span>Slack</a>
+              <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://invizz.slack.com/ssb/redirect?entry_point=homepage_nav" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a>
+              <div style="margin-top:30px;"></div>
+              <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;margin-right:3px;"></span>Send Message</button>
             </div>
-            <!-- <a class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;"></span>Send Message</a> -->
 
-            <!-- <a href="https://star-b4p7103.slack.com/app_redirect?app=A01L837USNS" target="_blank">Slack Test</a> -->
             <div class="col-md-9" style="padding: 30px 20px;">
-              <!-- <div class="modal-profile-bottom-detail" style="margin-left:0px;display:flex;"><div style="margin-top: 1px;font-size:25px;"  id="artist_mail"> About me</div></div>
-              <div class="bio-box">
-                <span id="my_bio"></span>
-              </div> -->
-
               <div class="courses-container">
                 <div class="course">
                   <div class="course-preview">

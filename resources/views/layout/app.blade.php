@@ -50,73 +50,74 @@
     @include('scripts.gmaps-address-lookup-api3')
 
         @section('sidebar')
-        @if($pages != 'map')
-            <!-- ======= Top Bar ======= -->
-            <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-                <div class="container d-flex">
-                <div class="contact-info me-auto">
-                    <i class="icofont-envelope"></i> <a href="mailto:stevegagz9@gmail.com">info@invizz.io</a>
+            @if($pages != 'map')
+                <!-- ======= Top Bar ======= -->
+                <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+                    <div class="container d-flex">
+                    <div class="contact-info me-auto">
+                        <i class="icofont-envelope"></i> <a href="mailto:stevegagz9@gmail.com">info@invizz.io</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://twitter.com/___invizz" class="twitter" style="margin-top:3px;"><i class="icofont-twitter"></i></a>
+                    </div>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://twitter.com/___invizz" class="twitter" style="margin-top:3px;"><i class="icofont-twitter"></i></a>
-                </div>
-                </div>
-            </div>
 
-            <!-- ======= Header ======= -->
-            <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center">
+                <!-- ======= Header ======= -->
+                <header id="header" class="fixed-top">
+                    <div class="container d-flex align-items-center">
 
-                <h1 class="logo me-auto">
-                    <a href="/">
-                        <img src="{{ asset('assets/img/logo.png') }}"/>
-                    </a>
-                </h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
+                    <h1 class="logo me-auto">
+                        <a href="/">
+                            <img src="{{ asset('assets/img/logo.png') }}"/>
+                        </a>
+                    </h1>
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
-                <nav class="nav-menu d-none d-lg-block">
-                    <ul>
-                        <li class="active"><a href="/" style="padding-bottom: 24px;padding-top: 24px;">Home</a></li>
-                        
-                        <!-- <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access">Login</a></li> -->
-                        @guest
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li> -->
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access" style="padding-bottom: 24px;padding-top: 24px;">Login</a></li>
-                            <!-- @if (Route::has('register'))
-                                <li>
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif -->
-                        @else
-                            <li class="drop-down">  <a href="#"><img src="@if(Auth::User()->profile->avatar_src){{Auth::User()->profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" style="width:40px;height:40px;border-radius:50%;"/> </a>
-                                <ul>
-                                    <li><a class="dropdown-item" href="/profile/{{Auth::user()->id}}"><span class="iconify" data-icon="noto:gear" data-inline="false" style="font-size: 25px;margin-right: 5px;"></span>Profile Setting</a>
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li class="active"><a href="/" style="padding-bottom: 24px;padding-top: 24px;">Home</a></li>
+                            
+                            <!-- <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access">Login</a></li> -->
+                            @guest
+                                <!-- <li>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li> -->
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access" style="padding-bottom: 24px;padding-top: 24px;">Login</a></li>
+                                <!-- @if (Route::has('register'))
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                           <span class="iconify" data-icon="emojione:outbox-tray" data-inline="false" style="font-size: 25px;margin-right: 5px;"></span> {{ __('Logout') }}
-                                        </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                     </li>
-                
-                                </ul>
-                            </li>
-                        @endguest
+                                @endif -->
+                            @else
+                                <li class="drop-down">  <a href="#"><img src="@if(Auth::User()->profile->avatar_src){{Auth::User()->profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" style="width:40px;height:40px;border-radius:50%;"/> </a>
+                                    <ul>
+                                        <li><a class="dropdown-item" href="/profile/{{Auth::user()->id}}"><span class="iconify" data-icon="noto:gear" data-inline="false" style="font-size: 25px;margin-right: 5px;"></span>Profile Setting</a>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                            <span class="iconify" data-icon="emojione:outbox-tray" data-inline="false" style="font-size: 25px;margin-right: 5px;"></span> {{ __('Logout') }}
+                                            </a>
 
-                    </ul>
-                </nav><!-- .nav-menu -->
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                        </li>
+                    
+                                    </ul>
+                                </li>
+                            @endguest
 
-                </div>
-            </header><!-- End Header -->
-            @endif
-        @show
+                        </ul>
+                    </nav><!-- .nav-menu -->
+
+                    </div>
+                </header><!-- End Header -->
+                @endif
+            @show
+
         @yield('content')
     </body>
 </html>
