@@ -41,6 +41,7 @@ class Profile extends Model
         'send_mail',
         'hide_age',
         'collab_status',
+        'slack_url',
         'social_fb',
         'social_tw',
         'social_insta',

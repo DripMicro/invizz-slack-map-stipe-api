@@ -49,6 +49,7 @@
             var send_mail = document.getElementById('send_mail').checked ? 'on':'off'
             var hide_age = document.getElementById('hide_age').checked ? 'on':'off'
             var collab_status = document.getElementById('collab_status').checked ? 'on':'off'
+            var slack_url = $("#slack_url").val()
             var social_fb = $("#social-fb").val()
             var social_tw = $("#social-tw").val()
             var social_insta = $("#social-insta").val()
@@ -60,7 +61,7 @@
             $.ajax({
                 url: "{{ route('profile.update',$profile->user_id) }}",
                 type: 'PUT',
-                data: {'_token': '{{ csrf_token() }}', 'firstname': firstname, 'lastname': lastname, 'bio': bio, 'address': address, 'zipcode': zipcode, 'dob': dob, 'artist_type': artist_type, 'send_mail': send_mail, 'hide_age': hide_age, 'collab_status': collab_status, 'social_fb': social_fb, 'social_tw': social_tw, 'social_insta': social_insta, 'social_lin': social_lin },
+                data: {'_token': '{{ csrf_token() }}', 'firstname': firstname, 'lastname': lastname, 'bio': bio, 'address': address, 'zipcode': zipcode, 'dob': dob, 'artist_type': artist_type, 'send_mail': send_mail, 'hide_age': hide_age, 'collab_status': collab_status, 'slack_url': slack_url, 'social_fb': social_fb, 'social_tw': social_tw, 'social_insta': social_insta, 'social_lin': social_lin },
                 dataType:'json',
                 success: function(user_info) {
                     console.log('user_info')

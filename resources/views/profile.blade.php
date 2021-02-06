@@ -182,7 +182,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="collab_status" name="collab_status" style="display:none;" value="on" <?php echo ($profile->collab_status=='on' ? 'checked' : '');?>>
+                                            <input type="checkbox" class="custom-control-input" id="collab_status" name="collab_status"  style="display:none;" value="on" <?php echo ($profile->collab_status=='on' ? 'checked' : '');?>>
                                             <span class="custom-control-indicator"></span>
                                         </label>
                                         <span>Are you open to collab? If on, you will appear when other artists search your area.</span><br>
@@ -192,6 +192,20 @@
                                     </div>
                                 </div> <!-- end row -->
 
+                                <br>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="addtype">Slack Account</label>
+                                        <div class="form-group" style="display:flex;">
+                                            <input type="text" class="form-control" id="slack_url" name="slack_url"  value="{{ $profile->slack_url }}" placeholder="Enter your slack url" style="border-right: 0px;border-radius: 0.25rem 0rem 0 0.25rem">
+                                            <button type="button" id="btn_invite_msg" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;width:210px;"><span class="iconify" data-icon="flat-color-icons:invite" data-inline="false"></span>Send invite message</button>
+                                        </div>
+                                        <span class="form-text text-muted"><small>Please enter your slack url to chat with other artists. You can receive invite message in your mailbox</span>
+                                    </div> <!-- end col -->
+                                </div> <!-- end row -->
+                                
                                 <br>
                                 <br>
                                 <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-earth mr-1"></i> Social</h5>

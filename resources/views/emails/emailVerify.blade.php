@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>INVIZZ - Email Verify</title>
+	 <!-- Favicons -->
+	 <link href="{{ asset('css/favicon.png') }}" rel="icon">
+        <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 </head>
 <style type="text/css">
 	

@@ -101,6 +101,7 @@ class ProfileController extends Controller
                         'send_mail' => $request->send_mail,
                         'hide_age' => $request->hide_age,
                         'collab_status' => $request->collab_status,
+                        'slack_url' => $request->slack_url,
                         'social_fb' => $request->social_fb,
                         'social_tw' => $request->social_tw,
                         'social_insta' => $request->social_insta,

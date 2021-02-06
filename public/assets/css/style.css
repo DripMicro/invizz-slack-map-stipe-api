@@ -508,6 +508,7 @@ h6 {
     height: 75vh;
     background: url("../img/home-bg.jpg") top left;
     position: relative;
+    background-size: cover;
 }
 
 #hero:before {
