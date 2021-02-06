@@ -172,8 +172,8 @@
               <br>
 
               <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://invizz.slack.com/ssb/redirect?entry_point=homepage_nav" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a>
-              <div style="margin-top:30px;"></div>
-              <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;margin-right:3px;"></span>Send Message</button>
+              <!-- <div style="margin-top:30px;"></div> -->
+              <!-- <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;margin-right:3px;"></span>Send Message</button> -->
             </div>
 
             <div class="col-md-9" style="padding: 30px 20px;">
