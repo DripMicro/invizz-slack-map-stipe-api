@@ -171,7 +171,7 @@
               </div>
               <br>
 
-              <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://app.slack.com/client/T01J6EAT9UP/D01LJ3C1XGF" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a>
+              <a class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="join_invizz" href="https://app.slack.com/client/T01J6EAT9UP/D01LJ3C1XGF" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a>
               <!-- <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://invizz.slack.com/ssb/redirect?entry_point=homepage_nav" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a> -->
               <!-- <div style="margin-top:30px;"></div> -->
               <!-- <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;margin-right:3px;"></span>Send Message</button> -->
