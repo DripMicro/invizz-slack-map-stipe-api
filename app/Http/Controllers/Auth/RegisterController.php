@@ -262,18 +262,18 @@ class RegisterController extends Controller
         ]);
 
 
-        // $auth = base64_encode($data['email']);
-        // $verify_link = "http://54.237.136.251/auth/".$auth;
+        $auth = base64_encode($data['email']);
+        $verify_link = "http://54.237.136.251/auth/".$auth;
 
-        // $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
+        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
     
-        // Mail::to($data['email'])->send(new sendGrid($input));
+        Mail::to($data['email'])->send(new sendGrid($input));
 
-        // $verify_email = $data['email'];
+        $verify_email = $data['email'];
         
-        // $data = DB::select('select id from users where email = ?',[$data['email']]);
+        $data = DB::select('select id from users where email = ?',[$data['email']]);
         $data = DB::table('users')
-        ->where('email', $data['email'])
+        ->where('email', $verify_email)
         ->get()->first();
 
         $user_id = $data->id;
