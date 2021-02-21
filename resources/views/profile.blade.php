@@ -259,7 +259,7 @@
                                     </div> <!-- end col -->
                                 </div> <!-- end row -->
 
-                                <div class="text-right">
+                                <div class="text-right" style="display:flex;justify-content:space-between;">
                                     <button type="button" class="btn btn-success waves-effect waves-light mt-2" id="save_profile"><i class="mdi mdi-content-save"></i> Save</button>
                                     <button type="button" class="btn btn-danger waves-effect waves-light mt-2" id="deactive_account"><span class="iconify" data-icon="fe:disabled" data-inline="false"></span> Deactivate account</button>
                                 </div>
