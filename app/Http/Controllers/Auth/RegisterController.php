@@ -20,6 +20,7 @@ use Stripe\Price;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Subscription;
+use Stripe\PaymentIntent;
 use Illuminate\Http\Request;
 
 
@@ -99,175 +100,98 @@ class RegisterController extends Controller
         $membership = $data['membership_type'];
 
         if($membership == 'monthly'){
-            // $price = Price::create([
-            //     'nickname' => 'Monthly Plan',
-            //     'product' => env('MONTHLY_PRODUCT_ID'),
-            //     'unit_amount' => $m_amount,
-            //     'currency' => $currency,
-            //     // 'recurring' => [
-            //     //     'interval' => 'day',
-            //     //     // 'usage_type' => 'licensed',
-            //     // ],
-            // ]);
+            try {
+                /** Add customer to stripe, Stripe customer */
+                $customer = Customer::create([
+                    'email'     => request('email'),
+                    'source'    => request('stripeToken')
+                ]);
+            } catch (Exception $e) {
+                $apiError = $e->getMessage();
+            }
+            if (empty($apiError) && $customer) {
+                /** Charge a credit or a debit card */
+                try {
+                    /** Stripe charge class */
 
-            $customer = Customer::create([
-                'email' => $data['email'],
-                'payment_method' => 'pm_card_visa',
-                'invoice_settings' => [
-                    'default_payment_method' => 'pm_card_visa',
-                ],
-            ]);
+                    $price = Price::create([
+                        'nickname' => 'Standard Monthly',
+                        'product' => env('MONTHLY_PRODUCT_ID'),
+                        'unit_amount' => $m_amount,
+                        'currency' => $currency,
+                        'recurring' => [
+                            'interval' => 'month',
+                            'usage_type' => 'licensed',
+                        ],
+                    ]);
 
-            // dd($price->recurring->interval);
+                    $subscription = Subscription::create([
+                        'customer' => $customer->id,
+                        'items' => [[
+                            'price' => $price->id,
+                        ]],
+                    ]);
 
-            $subscription = Subscription::create([
-                'customer' => $customer->id,
-                'items' => [[
-                  'price' => 'price_1IDhPnH3N3r89kEs0NDPNCcB',
-                ]],
-                // 'add_invoice_items' => [[
-                //   'price' => $price->id,
-                // ]],
-            ]);
-
-            //price_1IDhMXH3N3r89kEsqqX1boQe
-            // $paymentDetails = $price->jsonSerialize();
+                } catch (Exception $e) {
+                    $apiError = $e->getMessage();
+                }
+            }
 
         }else if($membership == 'annual'){
-            // $price = Price::create([
-            //     'nickname' => 'Yearly Plan',
-            //     'product' => env('ANNUAL_PRODUCT_ID'),
-            //     'unit_amount' => $y_amount,
-            //     'currency' => 'usd',
-            //     // 'recurring' => [
-            //     //     'interval' => 'month',
-            //     //     // 'usage_type' => 'licensed',
-            //     // ],
-            // ]);
+            try {
+                /** Add customer to stripe, Stripe customer */
+                $customer = Customer::create([
+                    'email'     => request('email'),
+                    'source'    => request('stripeToken')
+                ]);
+            } catch (Exception $e) {
+                $apiError = $e->getMessage();
+            }
+            if (empty($apiError) && $customer) {
+                /** Charge a credit or a debit card */
+                try {
+                    /** Stripe charge class */
 
-            $customer = Customer::create([
-                'email' => $data['email'],
-                'payment_method' => 'pm_card_visa',
-                'invoice_settings' => [
-                    'default_payment_method' => 'pm_card_visa',
-                ],
-            ]);
+                    $price = Price::create([
+                        'nickname' => 'Standard Monthly',
+                        'product' => env('ANNUAL_PRODUCT_ID'),
+                        'unit_amount' => $y_amount,
+                        'currency' => $currency,
+                        'recurring' => [
+                            'interval' => 'month',
+                            'usage_type' => 'licensed',
+                        ],
+                    ]);
 
-            // dd($price->recurring->interval);
+                    $subscription = Subscription::create([
+                        'customer' => $customer->id,
+                        'items' => [[
+                            'price' => $price->id,
+                        ]],
+                    ]);
 
-            $subscription = Subscription::create([
-                'customer' => $customer->id,
-                'items' => [[
-                  'price' => 'price_1ICshRH3N3r89kEscyrSbd2U',
-                ]],
-                // 'add_invoice_items' => [[
-                //   'price' => $price->id,
-                // ]],
-            ]);
-
-            //price_1ICshRH3N3r89kEscyrSbd2U
-            // $paymentDetails = $price->jsonSerialize();
+                } catch (Exception $e) {
+                    $apiError = $e->getMessage();
+                }
+            }
         }
 
-        try {
-            /** Add customer to stripe, Stripe customer */
-            $customer = Customer::create([
-                'email'     => request('email'),
-                'source'    => request('stripeToken')
-            ]);
-        } catch (Exception $e) {
-            $apiError = $e->getMessage();
-        }
-
-
-        // // dd(env('ANNUAL_PRODUCT_ID'));
-        // if (empty($apiError) && $customer) {
-        //     /** Charge a credit or a debit card */
-        //     try {
-        //         /** Stripe charge class */
-
-        //         $charge = Charge::create(array(
-        //             'customer'      => $customer->id,
-        //             'amount'        => $amount,
-        //             'currency'      => $currency,
-        //             'description'   => 'Some testing description'
-        //         ));
-
-        //         // $charge = Price::create([
-        //         //     'nickname' => 'Standard Yearly',
-        //         //     'product' => env('ANNUAL_PRODUCT_ID'),
-        //         //     'unit_amount' => 22000,
-        //         //     'currency' => 'usd',
-        //         //     'recurring' => [
-        //         //       'interval' => 'year',
-        //         //       'usage_type' => 'licensed',
-        //         //     ],
-        //         //   ]);
-        //     } catch (Exception $e) {
-        //         $apiError = $e->getMessage();
-        //     }
-
-
-
-        //     if (empty($apiError) && $charge) {
-        //         // Retrieve charge details 
-        //         $paymentDetails = $charge->jsonSerialize();
-
-        //         if ($paymentDetails['amount_refunded'] == 0 && empty($paymentDetails['failure_code']) && $paymentDetails['paid'] == 1 && $paymentDetails['captured'] == 1) {
-        //             /** You need to create model and other implementations */
-        //             /*
-        //             Payment::create([
-        //                 'name'                          => request('name'),
-        //                 'email'                         => request('email'),
-        //                 'amount'                        => $paymentDetails['amount'] / 100,
-        //                 'currency'                      => $paymentDetails['currency'],
-        //                 'transaction_id'                => $paymentDetails['balance_transaction'],
-        //                 'payment_status'                => $paymentDetails['status'],
-        //                 'receipt_url'                   => $paymentDetails['receipt_url'],
-        //                 'transaction_complete_details'  => json_encode($paymentDetails)
-        //             ]);
-        //             */
-        //             // $user = User::create([
-        //             //     'card_number' => 'sss',
-        //             //     'membership_type' => $data['membership_type'],
-        //             //     'email' => $data['email'],
-        //             //     'password' => Hash::make($data['password']),
-        //             // ]);
-
-        //             // return redirect('/?receipt_url=' . $paymentDetails['receipt_url']);
-
-        //         } else {
-        //             session()->flash('error', 'Transaction failed');
-        //             return back()->withInput();
-                    
-        //         }
-
-
-        //     } else {
-        //         session()->flash('error', 'Error in capturing amount: ' . $apiError);
-        //         return back()->withInput();
-        //     }
-        // } else {
-        //     session()->flash('error', 'Invalid card details: ' . $apiError);
-        //     return back()->withInput();
-        // }
-
-
-        
+        $subscription_id = $subscription->id;
         $user = User::create([
             'card_number' => 'VISA ****4242',
+            'subscription' => $subscription_id,
             'membership_type' => $data['membership_type'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 
 
-        $auth = base64_encode($data['email']);
-        $verify_link = "http://54.237.136.251/auth/".$auth;
+        // $auth = base64_encode($data['email']);
+        // $verify_link = "http://54.237.136.251/auth/".$auth;
 
-        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
+        // $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
     
-        Mail::to($data['email'])->send(new sendGrid($input));
+        // Mail::to($data['email'])->send(new sendGrid($input));
 
         $verify_email = $data['email'];
         

@@ -151,13 +151,13 @@
                       <br>
                       <div class="row">
                         <div class="col-md-12">
-                          <div class="desc"><p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👋 Hello!👋  <br>
-                          <div style="line-height:2;margin-left:10px;">
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are paying to support software that is completely bootstrapped by a young artist like yourself. <br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Charging for a membership is the only way we make money. <br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We do this so that we never have to show you a single ad or sell your data to any third-parties– and we promise we never will.<br>
-                          </div>
+                          <div class="desc" style="text-align:center;"><p>
+                            👋 Hello!👋  <br>
+                            <div style="line-height:2;">
+                                You are paying to support software that is completely bootstrapped by a young artist like yourself. <br>
+                                Charging for a membership is the only way we make money. <br>
+                                We do this so that we never have to show you a single ad or sell your data to any third-parties– and we promise we never will.<br>
+                            </div>
                           
                           </div>
                           
@@ -250,7 +250,7 @@
                           <div class="col-md-12">
                               <div class="form-check form-check-inline custom-control custom-checkbox">
                                   <input type="checkbox" name="terms_conditions" id="terms_conditions" class="custom-control-input" style="float: left;width: 30px;height: 23px;">
-                                  <span style="font-size:14px;">I agree to the terms of service (TOS) and privacy policy.</span>
+                                  <span style="font-size:14px;">I agree to the <a href="/terms-service" style="text-decoration:underline">Terms of Service (TOS) and Privacy Policy</a>.</span>
                               </div>
                               <p id="terms-error" role="alert" class="text-danger font-italic" style="font-size:12px;margin-left:35px;"></p>
                               @error('terms_conditions')

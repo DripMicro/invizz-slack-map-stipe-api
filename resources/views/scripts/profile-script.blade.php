@@ -72,8 +72,91 @@
                     tata.error('INVIZZ', "Update information Failed!")
                 }
             }) 
+        })
+
+        $("#deactive_account").click(function(){
+            var date = new Date()
+            var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            var created_at = "{{ Auth::user()->created_at }}"
+            var user_id = "{{ Auth::user()->id }}"
+            created_at = created_at.split(" ")
+            created_date = created_at[0]
+            var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()
+            // var current_date = "2021-06-05"
+            // created_date = "2021-06-03"
+            
+            created_date = created_date.split("-")
+            current_date = current_date.split("-")
+            var day = 0
+            if(Number(created_date[0]) < Number(current_date[0])){
+                day = 10
+            }else{
+                if(Number(created_date[1]) < (Number(current_date[1])-1)){
+                    day = 10
+                }
+                else if(Number(created_date[1]) == (Number(current_date[1])-1)){
+                    day = Number(current_date[2]) + months[Number(created_date[1])-1] - Number(created_date[2])
+                }else{
+                    day = Number(current_date[2]) - Number(created_date[2])
+                }
+            }
+
+            if(day < 7){
+                cuteAlert({
+                    type: "question",
+                    title: "INVIZZ",
+                    message: "We can refund you the money because you select Cancel Subscription/Deactivate account within the first 7 days of your account.<br> Would you really deactivate your account?",
+                    confirmText: "Yes",
+                    cancelText: "No"
+                }).then((e)=>{
+                    console.log(e)
+                    if (e == ("confirm")){
+                        $.ajax({
+                            url: "{{ route('payment.subscription.cancel') }}",
+                            type: 'POST',
+                            data: {'_token': '{{ csrf_token() }}','user_id':user_id, 'subscription': "{{ Auth::user()->subscription }}", 'expired_day':day},
+                            dataType:'json',
+                            success: function(user_info) {
+                                tata.success('INVIZZ', "Account Deactive Success!")
+                            },
+                            error: function() {
+                                tata.error('INVIZZ', "Account Deactive Failed!")
+                            }
+                        }) 
+                    }else{
+                        
+                    }
+                }) 
+            }else{
+                cuteAlert({
+                    type: "question",
+                    title: "INVIZZ",
+                    message: "Would you really deactivate your account?",
+                    confirmText: "Yes",
+                    cancelText: "No"
+                }).then((e)=>{
+                    console.log(e)
+                    if (e == ("confirm")){
+                        $.ajax({
+                            url: "{{ route('payment.subscription.cancel') }}",
+                            type: 'POST',
+                            data: {'_token': '{{ csrf_token() }}','user_id':user_id, 'subscription': "{{ Auth::user()->subscription }}", 'expired_day':day},
+                            dataType:'json',
+                            success: function(user_info) {
+                                tata.success('INVIZZ', "Account Deactive Success!")
+                            },
+                            error: function() {
+                                tata.error('INVIZZ', "Account Deactive Failed!")
+                            }
+                        }) 
+                    }else{
+                        
+                    }
+                }) 
+            }
             
 
+            
         })
     })
 </script>

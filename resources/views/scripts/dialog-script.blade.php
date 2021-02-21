@@ -26,8 +26,9 @@
             id_n = id_n[1]
             var image_src = $("#avatar_" + id_n).attr('src')
             var login_info = '<?php echo $login_info; ?>'
+            var active = '<?php echo $active; ?>'
 
-            if (login_info == "on") {
+            if (login_info == "on" && active=="on") {
                 $.ajax({
                     url: '/profiledialog',
                     type: 'POST',

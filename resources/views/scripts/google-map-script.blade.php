@@ -126,6 +126,8 @@
     };
 
     const secretMessages = ["This", "is", "the", "secret", "message"];
+
+    var active = '<?php echo $active; ?>'
     for(var i = 0; i < cities.length; i++){
         marker = new CustomMarker(new google.maps.LatLng(lat_lng[i][0], lat_lng[i][1]), map, images[i])
         marker.addListener("click", () => {
@@ -133,7 +135,7 @@
             var login_info = '<?php echo $login_info; ?>'
             var image_src = event.target.getAttribute("src")
                 console.log("my_src", image_src)
-            if(login_info=="on" && image_src != null){
+            if(login_info=="on" && active=="on" && image_src != null){
                 $.ajax({
                     url: '/profiledialog',
                     type: 'POST',

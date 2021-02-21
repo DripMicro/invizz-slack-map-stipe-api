@@ -19,7 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email_verified_at')->nullable();
             $table->string('password');
             $table->string('card_number');
+            $table->string('subscription');
             $table->string('membership_type');
+            $table->string('active')->default('on');
             $table->rememberToken();
             $table->timestamps();
         });

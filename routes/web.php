@@ -46,3 +46,7 @@ Route::get('/signin/{confirm}', function () {
 Route::post('/leave-feedback', 'EmailVerifyController@LeaveFeedback')->name('email.feedback');
 
 Route::get('/slack', 'SlackController@slack')->name('slack.sendmessage');
+Route::get('/terms-service', 'TermsServiceController@TermsService');
+
+Route::post('/cancel-subscription', 'PaymentController@CancelSubscription')->name('payment.subscription.cancel');
+

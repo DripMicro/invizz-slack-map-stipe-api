@@ -31,6 +31,9 @@ class SearchController extends Controller
         $zipcode = $request->search_address;
         $login_info = $request->login_info;
 
+        $currentUser = \Auth::user();
+        $active = isset($currentUser->active)?$currentUser->active:'off';
+        
         $ar_type = '1';
         $artist_type = DB::select('SELECT * FROM tbl_artist_type');
 
@@ -59,7 +62,7 @@ class SearchController extends Controller
         }
         $map_artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
         $pages = 'map';
-        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists'));
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists', 'active'));
     }
 
     public function FilterByType(Request $request)
@@ -67,6 +70,8 @@ class SearchController extends Controller
         $zipcode = $request->serchbyzipcode;
         $ar_type = $request->artist_type_for_search;
 
+        $currentUser = \Auth::user();
+        $active = isset($currentUser->active)?$currentUser->active:'off';
 
         $login_info = $request->login_info;
 
@@ -104,10 +109,13 @@ class SearchController extends Controller
         }
         $map_artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
         $pages = 'map';
-        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists'));
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists', 'active'));
     }
 
     public function AllView(Request $request){
+        $currentUser = \Auth::user();
+        $active = isset($currentUser->active)?$currentUser->active:'off';
+
         $artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
         $pages = 'map';
         $artist_type = DB::select('SELECT * FROM tbl_artist_type');
@@ -117,7 +125,7 @@ class SearchController extends Controller
         $login_info = $request->login_info;
 
         $map_artists = $artists;
-        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists'));
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists', 'active'));
     }
     /**
      * Show the form for creating a new resource.
