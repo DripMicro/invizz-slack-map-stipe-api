@@ -105,7 +105,7 @@
                 cuteAlert({
                     type: "question",
                     title: "INVIZZ",
-                    message: "We can refund you the money because you select Cancel Subscription/Deactivate account within the first 7 days of your account.<br> Would you really deactivate your account?",
+                    message: "Deactivating your account will automatically cancel your subscription and remove your profile from INVIZZ. If cancelling within the first 7 days of your membership, you will receive a refund. Would you really like to deactivate your account?",
                     confirmText: "Yes",
                     cancelText: "No"
                 }).then((e)=>{
@@ -131,7 +131,7 @@
                 cuteAlert({
                     type: "question",
                     title: "INVIZZ",
-                    message: "Would you really deactivate your account?",
+                    message: "Deactivating your account will automatically cancel your subscription and remove your profile from INVIZZ. If cancelling within the first 7 days of your membership, you will receive a refund. Would you really like to deactivate your account?",
                     confirmText: "Yes",
                     cancelText: "No"
                 }).then((e)=>{
