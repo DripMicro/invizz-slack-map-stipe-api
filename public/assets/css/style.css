@@ -571,6 +571,10 @@ h6 {
     background: #247cf0;
 }
 
+.btn-get-started:hover {
+    cursor: pointer;
+}
+
 #hero .btn-watch-video {
     font-size: 16px;
     display: inline-block;

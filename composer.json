@@ -16,7 +16,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
-        "stripe/stripe-php": "^7.69"
+        "stripe/stripe-php": "^7.69",
+        "vluzrmos/slack-api": "^0.5.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

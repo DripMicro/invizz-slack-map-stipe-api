@@ -30,4 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    [
+        //...,
+        'slack' => [
+            'token' => 'xoxp-1744765406193-1732182404194-1818106080710-5f4769fced5a6c2aa9d4bd1335e628a4'
+        ]
+    ]
+
 ];

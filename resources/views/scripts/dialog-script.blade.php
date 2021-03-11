@@ -66,7 +66,7 @@
                         $("#artist_rw").html("<a href='https://twitter.com/"+user_info['social_tw']+"' target='_blank'>"+user_info['social_tw']+"</a>")
                         $("#artist_lin").html("<a href='"+user_info['social_lin']+"' target='_blank'>"+user_info['social_lin']+"</a>")
                         
-                        $("#join_invizz").attr('href', user_info['slack_url'])
+                        $("#join_invizz").attr('href', "https://slack.com/app_redirect?channel="+user_info['slack_url'])
                         
                         $("#artist_mail").html(user_info['email'])
                         $("#my_bio").html(user_info['bio'])
