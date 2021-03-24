@@ -48,7 +48,9 @@
                         temp = temp.split('-')
                         var cur_date = new Date()
                         var age = cur_date.getFullYear() - Number(temp[0])
+                        if(((cur_date.getMonth()+1) - Number(temp[1]))<0) age -= 1
 
+                        console.log(cur_date.getMonth()+1, Number(temp[1]))
                         console.log(user_info['hide_age'])
                         if(user_info['hide_age'] == 'off'){
                             $("#artist_age").html("&nbsp;Age: "+age)

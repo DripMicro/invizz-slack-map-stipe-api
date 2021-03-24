@@ -2,23 +2,81 @@
 @section('title', 'Profile')
 @section('content')
 <div class="container top-padding">
-
+    <meta name="_token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
     
+    <style type="text/css">
+        #image {
+            display: block;
+            max-width: 100%;
+        }
+        .preview {
+            overflow: hidden;
+            width: 160px; 
+            height: 160px;
+            margin: 10px;
+            border: 1px solid red;
+        }
+        .modal-lg{
+            max-width: 700px !important;
+        } 
+    </style>
+
         <div class="row">
             <div class="col-lg-4 col-xl-4">
                 <div class="card-box text-center">
                     
-                    <form action="{{ route('image.upload.post',$profile->user_id) }}" method="POST" enctype="multipart/form-data" name="upload_avatar" id="upload_avatar">
+                    <!-- <form action="{{ route('image.upload.post',$profile->user_id) }}" method="POST" enctype="multipart/form-data" name="upload_avatar" id="upload_avatar">
                         @csrf
                         <div class="upload-image">
-                            <img src="@if($profile->avatar_src){{$profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">
+                            <img id="cover_image_croped" src="@if($profile->avatar_src){{$profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">
                             <input type="file" name="image" class="cover-image" id="file_upload">
                         </div>
-                        
-                    </form>
+                    </form> -->
+                    <div class="upload-image">
+                        <img id="cover_image_croped" src="@if($profile->avatar_src){{$profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">
+                        <!-- <input type="file" name="image" class="cover-image" id="file_upload"> -->
+                        <input type="file" name="images" class="cover-image" id="file_image">
+                    </div>
+
+
+                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Crop the picture to show you well</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="img-container">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <img id="image" src="https://avatars0.githubusercontent.com/u/3456749">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="preview"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" id="crop">Crop</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <h4 class="mb-0">@if(!$profile->first_name) Uncompleted @else {{ $profile->first_name }} {{ $profile->last_name }} @endif</h4>
                     <p class="text-muted">@if(!$profile->first_name) @Artist Type @else {{$profile->a_type }} @endif</p>
@@ -97,7 +155,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="address">Address </label>
-                                            <input type="text" class="form-control" id="address" name="address" value="{{ $profile->address }}" placeholder="Enter your detail address">
+                                            <input type="text" class="form-control" id="address" name="address" value="{{ $profile->address }}" placeholder="Enter your town or city">
                                             <span class="form-text text-muted"><small>(Ex. Fishtown, Philadelphia, PA, USA)</small></span> 
                                         </div>
                                     </div> 
@@ -199,8 +257,8 @@
                                     <div class="col-md-12">
                                         <label for="addtype">Slack ID</label>
                                         <div class="form-group" style="display:flex;">
-                                            <input type="text" class="form-control" id="slack_url" name="slack_url"  value="{{ $profile->slack_url }}" placeholder="Enter your slack url" style="border-right: 0px;border-radius: 0.25rem 0rem 0 0.25rem">
-                                            <a href="https://join.slack.com/t/invizzroom/shared_invite/zt-m9j8e829-351C7Qww3I0dzAJbGuwDnw" target="_blank" ><button type="button" id="btn_invite_msg" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;width:210px;"><span class="iconify" data-icon="icomoon-free:enter" data-inline="false"></span>&nbsp;&nbsp;&nbsp;Join to Invizz slack</button></a>
+                                            <input type="text" class="form-control" id="slack_url" name="slack_url"  value="{{ $profile->slack_url }}" placeholder="Enter your slack ID" style="border-right: 0px;border-radius: 0.25rem 0rem 0 0.25rem">
+                                            <a href="https://join.slack.com/t/invizzroom/shared_invite/zt-m9j8e829-351C7Qww3I0dzAJbGuwDnw" target="_blank" ><button type="button" id="btn_invite_msg" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;width:210px;"><span class="iconify" data-icon="icomoon-free:enter" data-inline="false"></span>&nbsp;&nbsp;&nbsp;Setup Slack Messenger</button></a>
                                         </div>
                                         <span class="form-text text-muted"><small>Please enter your slack id to chat with other artists. You can receive invite message in your mailbox</span>
                                     </div> <!-- end col -->
@@ -272,5 +330,6 @@
     </div>
 </div>
 @include('scripts.profile-script')
+@include('scripts.image-crop-upload-script')
 
 @endsection

@@ -167,6 +167,36 @@ class ProfileController extends Controller
    
     }
 
+    public function uploadCropImage(Request $request, $id){
+
+        // dd($request);
+        $folderPath = public_path('avatar/');
+ 
+        $image_parts = explode(";base64,", $request->image);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+ 
+        $imageName = uniqid() . '.png';
+ 
+        $imageFullPath = $folderPath.$imageName;
+ 
+        file_put_contents($imageFullPath, $image_base64);
+        
+
+        //  $saveFile = new Picture;
+        //  $saveFile->name = $imageName;
+        //  $saveFile->save();
+        
+        $img_src = '/avatar/'.$imageName;
+        DB::table('tbl_profile')
+        ->where('user_id', $id)
+        ->update(['avatar_src' => $img_src]);
+
+        echo json_encode($img_src);
+        // return response()->json(['success'=> $imageFullPath]);
+    }
+
     public function addArtistType(Request $request){
         $new_artist_type = $request->addtype;
         DB::table('tbl_artist_type')->insert(

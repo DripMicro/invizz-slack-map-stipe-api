@@ -156,12 +156,12 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3" style="padding: 30px 20px;">
-              <div class="modal-profile-bottom-detail" style="margin-left:0px;display:flex;margin-top:30px"><span class="iconify" data-icon="mdi:email" data-inline="false" style="font-size:25px;"></span><div style="margin-top: 1px;font-size: 16px;margin-left: 2px;"  id="artist_mail">viktor112kuzmin@yandex.com</div></div>
+              <div class="modal-profile-bottom-detail" style="margin-left:0px;display:flex;margin-top:30px"><span class="iconify" data-icon="mdi:email" data-inline="false" style="font-size:25px;"></span><div style="margin-top: 1px;font-size: 16px;margin-left: 2px;"  id="artist_mail">loading...</div></div>
               <br>
 
               <div class="artists-age">
                 <span class="iconify" data-icon="mdi:calendar-month-outline" data-inline="false" style="font-size:30px;"></span>
-                 <div style="margin-top: 4px;" id="artist_age"> &nbsp;Age: 36</div>
+                 <div style="margin-top: 4px;" id="artist_age"> &nbsp;Age: none</div>
               </div>
               <br>
 
@@ -173,7 +173,7 @@
 
               <!-- <a class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="join_invizz" href="/slack" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a> -->
               <!-- <a class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="join_invizz" href="https://app.slack.com/client/T01J6EAT9UP/D01LJ3C1XGF" target="_blank"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a> -->
-              <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://slack.com/app_redirect?channel=U01M3AQ97M5" target="_blank" id="join_invizz"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Slack</a>
+              <a class="btn-get-started scrollto bugfix" style="border-radius:20px;"  href="https://slack.com/app_redirect?channel=U01M3AQ97M5" target="_blank" id="join_invizz"><span class="iconify" data-icon="mdi:slack" data-inline="false" style="font-size:20px;margin-right:3px;margin-bottom:3px;"></span>Message</a>
               <!-- <div style="margin-top:30px;"></div> -->
               <!-- <button class="btn-get-started scrollto bugfix" style="border-radius:20px;" id="btn_slack"><span class="iconify" data-icon="mdi:message-reply-text" data-inline="false" style="font-size:20px;margin-right:3px;"></span>Send Message</button> -->
             </div>
@@ -186,7 +186,7 @@
                     <h2>About Me</h2>
                   </div>
                   <div class="course-info">
-                    <h6 id="my_bio">Chapter 4</h6>
+                    <h6 id="my_bio"></h6>
                   </div>
                 </div>
               </div>
@@ -271,7 +271,8 @@
             <img src="{{ $artist->avatar_src}}" class="m-avatar" id="avatar_{{ $artist->user_id }}"/>
             <div class="m-person-content">
               <div class="m-name">{{ $artist->first_name }} {{ $artist->last_name }}</div>
-              <div class="m-type"><span class="iconify" data-icon="ic:outline-favorite" data-inline="false" style="font-size:26px;margin-bottom:3px;color:#B00020"></span>
+              <div class="m-type">&nbsp;&nbsp;&nbsp;
+              <!-- <span class="iconify" data-icon="ic:outline-favorite" data-inline="false" style="font-size:26px;margin-bottom:3px;color:#B00020"></span> -->
                   @if($artist->a_type)
                     {{ $artist->a_type }}
                   @else

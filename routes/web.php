@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Profile setting
 Route::post('/image-upload/{id}', 'ProfileController@imageUploadPost')->name('image.upload.post');
+Route::post('/crop-image-upload/{id} ', 'ProfileController@uploadCropImage')->name('image.crop.upload');
 Route::post('/profile-add-type', 'ProfileController@addArtistType')->name('profile.addtype');
 Route::get('/profile/{id}', 'ProfileController@edit');
 

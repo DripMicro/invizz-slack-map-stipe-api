@@ -27,7 +27,7 @@ class CreateProfileTable extends Migration
             $table->string('artist_type')->nullable();
             $table->string('send_mail')->default('off');
             $table->string('hide_age')->default('off');
-            $table->string('collab_status')->default('off');
+            $table->string('collab_status')->default('on');
             $table->string('slack_url')->nullable();
             $table->string('social_fb')->nullable();
             $table->string('social_tw')->nullable();
