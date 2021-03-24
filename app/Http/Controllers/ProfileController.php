@@ -169,7 +169,7 @@ class ProfileController extends Controller
 
     public function uploadCropImage(Request $request, $id){
 
-        $folderPath = public_path('avatar/');
+        $folderPath = public_path('photos/');
         $image_parts = explode(";base64,", $request->image);
         $image_type_aux = explode("image/", $image_parts[0]);
         $image_type = $image_type_aux[1];
@@ -181,7 +181,7 @@ class ProfileController extends Controller
 
         file_put_contents($imageFullPath, $image_base64);
         
-        $img_src = '/avatar/'.$imageName;
+        $img_src = '/photos/'.$imageName;
         DB::table('tbl_profile')
         ->where('user_id', $id)
         ->update(['avatar_src' => $img_src]);
