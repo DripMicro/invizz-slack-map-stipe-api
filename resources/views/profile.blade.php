@@ -259,7 +259,7 @@
                                         <label for="addtype">Slack ID</label>
                                         <div class="form-group" style="display:flex;">
                                             <input type="text" class="form-control" id="slack_url" name="slack_url"  value="{{ $profile->slack_url }}" placeholder="Enter your slack ID" style="border-right: 0px;border-radius: 0.25rem 0rem 0 0.25rem">
-                                            <a href="https://join.slack.com/t/invizzroom/shared_invite/zt-m9j8e829-351C7Qww3I0dzAJbGuwDnw" target="_blank" ><button type="button" id="btn_invite_msg" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;width:210px;"><span class="iconify" data-icon="icomoon-free:enter" data-inline="false"></span>&nbsp;&nbsp;&nbsp;Setup Slack Messenger</button></a>
+                                            <a href="https://join.slack.com/t/invizzroom/shared_invite/zt-nihef4xi-AdhedtQzE0ja8fmPjuCOkg" target="_blank" ><button type="button" id="btn_invite_msg" style="border: 1px solid #ced4da;border-left: 0px;padding: 10px;border-radius: 0rem 0.25rem 0.25rem 0rem;width:210px;"><span class="iconify" data-icon="icomoon-free:enter" data-inline="false"></span>&nbsp;&nbsp;&nbsp;Setup Slack Messenger</button></a>
                                         </div>
                                         <span class="form-text text-muted"><small>Please enter your slack id to chat with other artists. You can receive invite message in your mailbox</span>
                                     </div> <!-- end col -->
