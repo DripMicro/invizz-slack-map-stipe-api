@@ -56,7 +56,7 @@
 					type: "POST",
 					dataType: "json",
 					url: "/crop-image-upload/<?php echo $profile->user_id;?>",
-					data: {'_token': $('meta[name="_token"]').attr('content'), 'image': base64data},
+					data: {'_token': '{{ csrf_token() }}', 'image': base64data},
 					success: function(data){
 						console.log(data);
 						
