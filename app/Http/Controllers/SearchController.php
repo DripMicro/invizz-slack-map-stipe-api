@@ -14,7 +14,17 @@ class SearchController extends Controller
      */
     public function index() 
     {
-        
+        $currentUser = \Auth::user();
+        $active = isset($currentUser->active)?$currentUser->active:'off';
+        $login_info = isset($currentUser->active)?$currentUser->active:'off';
+        $map_artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
+        $centerOflocation = "39.774769,-101.305086";
+        $ar_type = '1';
+        $artist_type = DB::select('SELECT * FROM tbl_artist_type');
+        $artists = DB::select("SELECT t1.*, t2.artist_type AS a_type FROM (SELECT * FROM tbl_profile WHERE zipcode = '00000' AND collab_status='on')t1 LEFT JOIN tbl_artist_type t2 ON t1.artist_type = t2.id");
+        $pages = 'map';
+        $zipcode = '00000';
+        return view('search_map', compact('pages', 'artists', 'artist_type', 'zipcode', 'ar_type', 'centerOflocation', 'login_info', 'map_artists', 'active'));
     }
     
     public function profileDialog(Request $request){
