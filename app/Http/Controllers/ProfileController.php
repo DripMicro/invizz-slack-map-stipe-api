@@ -106,6 +106,7 @@ class ProfileController extends Controller
                         'social_tw' => $request->social_tw,
                         'social_insta' => $request->social_insta,
                         'social_lin' => $request->social_lin,
+                        'profile_complete' => $request->profile_complete,
                     ]);
                     
         echo json_encode($result);

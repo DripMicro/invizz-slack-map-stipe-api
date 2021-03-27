@@ -180,6 +180,7 @@ return [
         jeremykenedy\Slack\Laravel\ServiceProvider::class,
         Vluzrmos\SlackApi\SlackApiServiceProvider::class,
         
+        Laravel\Passport\PassportServiceProvider::class
     ],
 
     /*

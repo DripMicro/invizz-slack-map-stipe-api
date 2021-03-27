@@ -56,12 +56,16 @@
             var social_lin = $("#social-lin").val()
 
             console.log(firstname, lastname, bio, address, zipcode, dob, artist_type, send_mail, hide_age, collab_status, social_fb, social_tw, social_insta, social_lin)
-            if($("#artist_type").val()==1) tata.error('INVIZZ', "Please select your artist type!")
+            console.log( $("#cover_image_croped").attr('src'))
+
+            var img_src_check = $("#cover_image_croped").attr('src')
+            console.log(img_src_check.indexOf("assets/img/artists/avatar.jpg"))
+            if($("#artist_type").val()==1 || img_src_check.indexOf("assets/img/artists/avatar.jpg")>1 || firstname == "" || lastname == "") tata.error('INVIZZ', "Complete your profile, please check again")
             else
             $.ajax({
                 url: "{{ route('profile.update',$profile->user_id) }}",
                 type: 'PUT',
-                data: {'_token': '{{ csrf_token() }}', 'firstname': firstname, 'lastname': lastname, 'bio': bio, 'address': address, 'zipcode': zipcode, 'dob': dob, 'artist_type': artist_type, 'send_mail': send_mail, 'hide_age': hide_age, 'collab_status': collab_status, 'slack_url': slack_url, 'social_fb': social_fb, 'social_tw': social_tw, 'social_insta': social_insta, 'social_lin': social_lin },
+                data: {'_token': '{{ csrf_token() }}', 'firstname': firstname, 'lastname': lastname, 'bio': bio, 'address': address, 'zipcode': zipcode, 'dob': dob, 'artist_type': artist_type, 'send_mail': send_mail, 'hide_age': hide_age, 'collab_status': collab_status, 'slack_url': slack_url, 'social_fb': social_fb, 'social_tw': social_tw, 'social_insta': social_insta, 'social_lin': social_lin, 'profile_complete': 'on'},
                 dataType:'json',
                 success: function(user_info) {
                     console.log('user_info')

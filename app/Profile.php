@@ -46,6 +46,7 @@ class Profile extends Model
         'social_tw',
         'social_insta',
         'social_lin',
+        'profile_complete',
     ];
 
     protected $casts = [

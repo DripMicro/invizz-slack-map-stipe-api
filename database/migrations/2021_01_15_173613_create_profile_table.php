@@ -33,6 +33,7 @@ class CreateProfileTable extends Migration
             $table->string('social_tw')->nullable();
             $table->string('social_insta')->nullable();
             $table->string('social_lin')->nullable();
+            $table->string('profile_complete')->default('off');
 
             $table->rememberToken();
             $table->timestamps();
