@@ -297,7 +297,8 @@
     
     
  </div>
-
+ <div id="pageloader"></div>
+@include('scripts.preloader-script')
  @include('scripts.google-map-script')
  @include('scripts.dialog-script')
 

@@ -12,7 +12,7 @@
         <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
 
         <!-- Vendor CSS Files -->
         <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -38,7 +38,7 @@
         <script src="{{ asset('assets/js/dist/tata.js') }}"></script>
         
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-        <script src='http://maps.googleapis.com/maps/api/js?v=3&sensor=false&amp;libraries=places&key=AIzaSyBM9X8u2sBiuXwtbHEyCNBddrpf_s2a2Z8'></script>
+        <script src='http://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&key=AIzaSyBM9X8u2sBiuXwtbHEyCNBddrpf_s2a2Z8'></script>
         <!-- =======================================================
         * Template Name: BizLand - v2.0.3
         * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
@@ -72,24 +72,11 @@
                             <img src="{{ asset('assets/img/logo.png') }}"/>
                         </a>
                     </h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
-
                     <nav class="nav-menu d-none d-lg-block">
                         <ul>
                             <li class="active"><a href="/" style="padding-bottom: 24px;padding-top: 24px;">Home</a></li>
-                            
-                            <!-- <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access">Login</a></li> -->
                             @guest
-                                <!-- <li>
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li> -->
                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" data-ticket-type="premium-access" style="padding-bottom: 24px;padding-top: 24px;">Login</a></li>
-                                <!-- @if (Route::has('register'))
-                                    <li>
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif -->
                             @else
                                 <li class="drop-down">  <a href="#"><img src="@if(Auth::User()->profile->avatar_src){{Auth::User()->profile->avatar_src}}@else{{ asset('assets/img/artists/avatar.jpg')}} @endif" style="width:40px;height:40px;border-radius:50%;"/> </a>
                                     <ul>

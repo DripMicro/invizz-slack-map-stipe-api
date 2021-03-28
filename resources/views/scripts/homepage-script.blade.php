@@ -3,64 +3,9 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script>
     $(document).ready(function() {
-
-
-        console.log("{{ env('STRIPE_PUBLISH_KEY') }}")
-
-        console.log("eliteaa:", "<?php echo env('STRIPE_PUBLISH_KEY'); ?>")
         // Create an instance of the Stripe object
         // Set your publishable API key
         var stripe = Stripe("{{ env('STRIPE_PUBLISH_KEY') }}");
-
-        // Create an instance of elements
-        // var elements = stripe.elements();
-
-        // console.log(elements)
-        // var style = {
-        //     base: {
-        //         fontWeight: 400,
-        //         fontFamily: '"DM Sans", Roboto, Open Sans, Segoe UI, sans-serif',
-        //         fontSize: '16px',
-        //         lineHeight: '1.4',
-        //         color: '#1b1642',
-        //         padding: '.75rem 1.25rem',
-        //         '::placeholder': {
-        //             color: '#ccc',
-        //         },
-        //     },
-        //     invalid: {
-        //         color: '#dc3545',
-        //     }
-        // };
-
-        // var cardElement = elements.create('cardNumber', {
-        //     style: style
-        // });
-        // cardElement.mount('#card_number');
-
-        // var exp = elements.create('cardExpiry', {
-        //     'style': style
-        // });
-        // exp.mount('#card_expiry');
-
-        // var cvc = elements.create('cardCvc', {
-        //     'style': style
-        // });
-        // cvc.mount('#card_cvc');
-
-        // // Validate input of the card elements+++++++++++++++++++++++
-        // var resultContainer = document.getElementById('paymentResponse');
-        // cardElement.addEventListener('change', function (event) {
-        //     if (event.error) {
-        //         resultContainer.innerHTML = '<p>' + event.error.message + '</p>';
-        //     } else {
-        //         resultContainer.innerHTML = '';
-        //     }
-        // });
-
-
-
-
 
         var elements = stripe.elements();
 
@@ -143,30 +88,10 @@
             }else{
                 $("#terms-error").html('');
             }
+        })
 
-            // var email = $("#email").val()
-
-            // $("#verify_email").val(email)
-
-            // console.log("this is my value:", $("#verify_email").val())
-            // $("#email_form").submit()
-
-            // $.ajax({
-            //         url: "{{ route('email.verify') }}",
-            //         type: 'POST',
-            //         data: { '_token': '{{ csrf_token() }}', 'email': email },
-            //         dataType: 'json',
-            //         success: function(user_info) {
-            //             console.log(user_info)
-            //             $("#verify_email").val("asdfadfadfads") 
-            //             location.href="{{ route('email.toverify') }}"
-            //         },
-            //         error: function() {
-            //             console.log('error');
-            //         }
-            //     })
-
-            
+        $("#payment-form").on('submit', function() {
+            console.log("This")
         })
 
         console.log($("#registered").val())

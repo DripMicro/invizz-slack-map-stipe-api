@@ -330,7 +330,10 @@
         </div> <!-- end col -->
     </div>
 </div>
+
 @include('scripts.profile-script')
 @include('scripts.image-crop-upload-script')
-
+<!-- Template Main JS File -->
+<div id="pageloader"></div>
+@include('scripts.preloader-script')
 @endsection
