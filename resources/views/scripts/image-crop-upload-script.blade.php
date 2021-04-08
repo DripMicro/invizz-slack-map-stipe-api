@@ -41,8 +41,8 @@
 	})
 	$("#crop").click(function(){
 		canvas = cropper.getCroppedCanvas({
-			width: 160,
-			height: 160,
+			width:500,
+			height: 500,
 		});
 
 		console.log("/crop-image-upload/<?php echo $profile->user_id;?>")
