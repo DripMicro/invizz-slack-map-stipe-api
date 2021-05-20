@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>INVIZZ - Email Verify</title>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	 <!-- Favicons -->
 	 <link href="{{ asset('css/favicon.png') }}" rel="icon">
         <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
