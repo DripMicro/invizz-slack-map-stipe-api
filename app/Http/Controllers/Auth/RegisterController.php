@@ -186,13 +186,13 @@ class RegisterController extends Controller
         ]);
 
 
-        // $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-        // $auth = base64_encode($data['email']);
-        // $verify_link = $actual_link."/auth/".$auth;
+        $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+        $auth = base64_encode($data['email']);
+        $verify_link = $actual_link."/auth/".$auth;
 
-        // $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
+        $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
     
-        // Mail::to($data['email'])->send(new sendGrid($input));
+        Mail::to($data['email'])->send(new sendGrid($input));
 
         $verify_email = $data['email'];
         
