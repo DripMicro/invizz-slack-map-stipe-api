@@ -39,6 +39,8 @@ Route::get('/not-activated', 'EmailVerifyController@ToVerify')->name('email.tove
 
 Route::post('/not-activated', 'EmailVerifyController@EmailVerify')->name('email.verify');
 
+Route::post('/recend-mail', 'EmailVerifyController@RecendMail')->name('email.recend');
+
 Route::get('/auth/{confirm}', 'WelcomeController@auth');
 
 Route::get('/signin/{confirm}', function () {

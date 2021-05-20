@@ -186,8 +186,9 @@ class RegisterController extends Controller
         ]);
 
 
+        $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
         $auth = base64_encode($data['email']);
-        $verify_link = "http://54.237.136.251/auth/".$auth;
+        $verify_link = $actual_link."/auth/".$auth;
 
         $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
     

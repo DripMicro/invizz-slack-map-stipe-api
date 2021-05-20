@@ -130,7 +130,8 @@ trait AuthenticatesUsers
         //
             $email = $user->email;
             $auth = base64_encode($email);
-            $verify_link = "http://54.237.136.251/signin/".$auth;
+            $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+            $verify_link = $actual_link."/signin/".$auth;
     
             $input = ['message' => $verify_link, 'subject' => 'Email Verification'];
         

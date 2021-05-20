@@ -64,10 +64,13 @@
 				Head over to your inbox and click on the "Activate My Account" button to validate your email address.
 			</div>
 			<hr/>
-
+			<form method="POST" action="{{ route('email.recend') }}">
+			@csrf
+			<input type="hidden" name="resend_mail" value="{{ $email }}"/>
 			<div style="text-align: center;margin-top: 30px;position: relative;">
-				<div class="btn-resend">Resend Activation E-Mail</div>
+				<button type="submit" class="btn-resend">Resend Activation E-Mail</button>
 			</div>
+			</form>
 			<div style="text-align: center;margin-top: 75px;color: #a2a2a2;text-align: center;font-family: ui-serif;">I have already clicked the button, take me to my account</div>
 		</div>
 	</div>
